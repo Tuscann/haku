@@ -1,7 +1,7 @@
 *.log
 .htaccess.orig
-.iml
-.idea/
+*.iml
+.idea/*
 
 /.htaccess
 /license.txt
