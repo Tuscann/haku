@@ -1,74 +1,83 @@
 <?php
 session_start();
 include_once 'header.php';
+require 'db_config.php';
+$_SESSION['message'] = "";
 
-//if ($_POST['login']) {
-//
-//}
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $username = $mysqli->escape_string($_POST['username']);
+
+    $result = $mysqli->query("SELECT * FROM users WHERE username='$username'");
+
+    if ( $result->num_rows == 0 ){ // User doesn't exist
+        $_SESSION['message'] = "User with that email doesn't exist!";
+//        header("location: error.php");
+    }
+    else { // User exists
+        $user = $result->fetch_assoc();
+
+        if ( password_verify($_POST['password'], $user['password']) ) {
+
+            $_SESSION['email'] = $user['email'];
+            $_SESSION['username'] = $user['username'];
+//            $_SESSION['active'] = $user['active'];
+
+            // This is how we'll know the user is logged in
+            $_SESSION['logged_in'] = true;
+            $_SESSION['message'] = 'You are logged in!';
+            header("location: index.php");
+        }
+        else {
+            $_SESSION['message'] = "You have entered wrong password, try again!";
+            //header("location: error.php");
+        }
+    }
+}
+print_r($_SESSION['message']);
+
 ?>
 
 <div class="container login-container">
-    <div class="omb_login">
-        <h3 class="omb_authTitle">Login or <a href="register.php">Sign up</a></h3>
-        <div class="row omb_row-sm-offset-3 omb_socialButtons">
-            <div class="col-xs-4 col-sm-2">
-                <a href="#" class="btn btn-lg btn-block omb_btn-facebook">
-                    <i class="fa fa-facebook visible-xs"></i>
-                    <span class="hidden-xs">Facebook</span>
-                </a>
+    <div class="row">
+
+        <div class="main">
+
+            <h3>Please Log In, or <a href="register.php">Sign Up</a></h3>
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <a href="#" class="btn btn-lg btn-primary btn-block"><span class="btn-label"><i class="fa fa-facebook"></i></span></a>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <a href="#" class="btn btn-lg btn-danger btn-block"><span class="btn-label"><i class="fa fa-google-plus"></i></span></a>
+                </div>
             </div>
-            <div class="col-xs-4 col-sm-2">
-                <a href="#" class="btn btn-lg btn-block omb_btn-twitter">
-                    <i class="fa fa-twitter visible-xs"></i>
-                    <span class="hidden-xs">Twitter</span>
-                </a>
+            <div class="login-or">
+                <hr class="hr-or">
+                <span class="span-or">or</span>
             </div>
-            <div class="col-xs-4 col-sm-2">
-                <a href="#" class="btn btn-lg btn-block omb_btn-google">
-                    <i class="fa fa-google-plus visible-xs"></i>
-                    <span class="hidden-xs">Google+</span>
-                </a>
-            </div>
+
+            <form role="form" method="POST" action="login.php">
+                <div class="form-group">
+                    <label for="inputUsernameEmail">Username</label>
+                    <input type="text" name="username" class="form-control" id="inputUsernameEmail" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <a class="pull-right" href="#">Forgot password?</a>
+                    <label for="inputPassword">Password</label>
+                    <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password">
+                </div>
+                <div class="checkbox pull-right">
+                    <label>
+                        <input type="checkbox">
+                        Remember me </label>
+                </div>
+                <button type="submit" class="btn btn btn-success">
+                    Log In
+                </button>
+            </form>
+
         </div>
 
-        <div class="row omb_row-sm-offset-3 omb_loginOr">
-            <div class="col-xs-12 col-sm-6">
-                <hr class="omb_hrOr">
-                <span class="omb_spanOr">or</span>
-            </div>
-        </div>
-
-        <div class="row omb_row-sm-offset-3">
-            <div class="col-xs-12 col-sm-6">
-                <form class="omb_loginForm" action="" autocomplete="off" method="POST">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                        <input type="text" class="form-control" name="username" placeholder="email address">
-                    </div>
-                    <span class="help-block"></span>
-
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                        <input type="password" class="form-control" name="password" placeholder="Password">
-                    </div>
-                    <span class="help-block">Password error</span>
-
-                    <button class="btn btn-lg btn-success btn-block" type="submit">Login</button>
-                    <a class="btn btn-lg btn-warning btn-block" href="index.php">Cancel</a>
-                </form>
-            </div>
-        </div>
-<!--        <div class="row omb_row-sm-offset-3">-->
-<!--            <div class="col-xs-12 col-sm-3">-->
-<!--                <label class="checkbox">-->
-<!--                    <input type="checkbox" value="remember-me">Remember Me-->
-<!--                </label>-->
-<!--            </div>-->
-<!--            <div class="col-xs-12 col-sm-3">-->
-<!--                <p class="omb_forgotPwd">-->
-<!--                    <a href="#">Forgot password?</a>-->
-<!--                </p>-->
-<!--            </div>-->
-<!--        </div>-->
     </div>
 </div>
