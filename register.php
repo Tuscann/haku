@@ -1,5 +1,4 @@
 <?php
-session_start();
 include_once 'header.php';
 require 'db_config.php';
 $_SESSION['message'] = "";
@@ -7,6 +6,8 @@ $_SESSION['message'] = "";
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $_SESSION['username'] = $_POST['username'];
     $_SESSION['email'] = $_POST['email'];
+
+
 
     $username = $mysqli->escape_string($_POST['username']);
     $email = $mysqli->escape_string($_POST['email']);
@@ -31,19 +32,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
 }
+?>
 
-
-
-
-//if($_SERVER['REQUEST_METHOD'] == 'POST') {
-//    if ($_POST['password'] == $_POST['confrim_password']) {
-//
-//        $username = $mysqli->real_escape_string($_POST['username']);
-//        $email = $mysqli->real_escape_string($_POST['email']);
-//    }
-//}
-//
-//?>
 
 <div class="container login-container">
     <div class="row">
@@ -51,15 +41,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <h3 class="dark-grey">Registration</h3>
 
             <form action="register.php" method="POST">
-                <div class="form-group col-lg-12 alert alert-danger text-center">
-                    <a class="close" data-dismiss="alert" href="#">×</a>
-                    <?php
-                        if(isset($_SESSION['message']) && !empty($_SESSION['message'])) {
+                <?php
+                if (!empty($_SESSION['message'])) {
+                    ?>
+                    <div class="form-group col-lg-12 alert alert-danger text-center">
+                        <a class="close" data-dismiss="alert" onclick="closeError()" >×</a>
+                        <?php
+                        if(isset($_SESSION['message'])) {
                             echo $_SESSION['message'];
                         }
 
-                    ?>
-                </div>
+                        ?>
+                    </div>
+                <?php } ?>
+
                 <div class="form-group col-lg-12">
                     <label>Username</label>
                     <input type="text" name="username" class="form-control" id="" placeholder="Username" >
@@ -95,4 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </div>
 </div>
+
+<?php
+include_once 'footer.php';
 

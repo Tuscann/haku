@@ -20,14 +20,26 @@
                 <li><a href="#">Reviews</a></li>
                 <li><a href="#">News</a></li>
             </ul>
+            <?php
+            if (empty($_SESSION['logged_in'])) {
+                ?>
+                <ul class="nav navbar-nav navbar-right nav-auth">
+                    <li>
+                        <a href="login.php">Login</a>
+                        <span class="separator">/</span>
+                        <a href="register.php">Sing up</a>
+                    </li>
+                </ul>
+            <?php } else {
+//                var_dump($_SESSION['logged_in']);
+                ?>
+                <ul class="nav navbar-nav navbar-right nav-auth">
+                    <li>
+                        <span>Welcome, </span> <a href="logout.php"><?php echo $_SESSION['username']?></a>
+                    </li>
+                </ul>
+            <?php } ?>
 
-            <ul class="nav navbar-nav navbar-right nav-auth">
-                <li>
-                    <a href="login.php">Login</a>
-                    <span class="separator">/</span>
-                    <a href="register.php">Sing up</a>
-                </li>
-            </ul>
         </div><!--/.navbar-collapse -->
     </div>
 </nav>
