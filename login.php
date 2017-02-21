@@ -6,16 +6,15 @@ $_SESSION['message'] = "";
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = $mysqli->escape_string($_POST['username']);
+    $username = $_POST['username'];
+    $query = $pdo->prepare("SELECT * FROM users WHERE username='$username'");
+    $query->execute();
 
-    $result = $mysqli->query("SELECT * FROM users WHERE username='$username'");
-
-    if ($result->num_rows == 0) { // User doesn't exist
+    if ($query->rowCount() == 0) { // User doesn't exist
         $_SESSION['message'] = "User with that username doesn't exist!";
 //        header("location: login.php");
     } else { // User exists
-        $user = $result->fetch_assoc();
-
+        $user = $query->fetch();
         if (password_verify($_POST['password'], $user['password'])) {
 
             $_SESSION['email'] = $user['email'];
@@ -32,6 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 }
+
 ?>
 
     <div class="container login-container">

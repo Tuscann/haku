@@ -19,8 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $sql = "INSERT INTO users (username, email, password) "
             . "VALUES ('$username', '$email','$password')";
 
-
-        if ($pdo->prepare($sql)) {
+        if ($pdo->prepare($sql)->execute()) {
             $_SESSION['logged_in'] = true;
             $_SESSION['message'] = 'You are successfully registered!';
             header('Location: index.php');
