@@ -33,10 +33,21 @@
             <?php } else {
 //                var_dump($_SESSION['logged_in']);
                 ?>
-                <ul class="nav navbar-nav navbar-right nav-auth">
+                <ul class="nav navbar-nav navbar-right nav-auth user-dropdown">
+
                     <li>
-                        <span>Welcome, </span> <a href="logout.php"><?php echo $_SESSION['username']?></a>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <span>Welcome, <strong><?php echo $_SESSION['username']?></strong>
+                                <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="#">Profile</a></li>
+                            <li><a href="logout.php">Log out</a></li>
+                        </ul>
+
                     </li>
+                    </div>
                 </ul>
             <?php } ?>
 

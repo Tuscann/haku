@@ -1,7 +1,8 @@
+
 <?php
-$host = 'localhost';
-$user = 'root';
-$pass = '';
-$db = 'game_world_db';
-$mysqli = new mysqli($host,$user,$pass,$db) or die($mysqli->error);
-?>
+
+try {
+    $pdo = new PDO('mysql:host=localhost;dbname=game_world_db', 'root', '');
+} catch (PDOException $e) {
+    die('Could not connect.');
+}

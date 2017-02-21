@@ -7,13 +7,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $_SESSION['username'] = $_POST['username'];
     $_SESSION['email'] = $_POST['email'];
 
-
-
-    $username = $mysqli->escape_string($_POST['username']);
-    $email = $mysqli->escape_string($_POST['email']);
-    $password = $mysqli->escape_string(password_hash($_POST['password'], PASSWORD_BCRYPT));
-
-    $result = $mysqli->query("SELECT * FROM users WHERE email='$email'") or die($mysqli->error);
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+    $result = $pdo->prepare("SELECT * FROM users WHERE email='$email'")->execute();
 
     if ($result->num_rows > 0) {
         $_SESSION['message'] = 'User with this email already exists!';
@@ -22,7 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $sql = "INSERT INTO users (username, email, password) "
             . "VALUES ('$username', '$email','$password')";
 
-        if ($mysqli->query($sql)) {
+
+        if ($pdo->prepare($sql)) {
             $_SESSION['logged_in'] = true;
             $_SESSION['message'] = 'You are successfully registered!';
             header('Location: index.php');
