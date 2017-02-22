@@ -1,6 +1,4 @@
-<<<<<<< Updated upstream
 <?php include_once 'header.php' ?>
-=======
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,8 +17,7 @@
 </head>
 
 <body>
->>>>>>> Stashed changes
-<?php include_once 'navbar.php' ?>
+<?php include_once 'navbar.php'; ?>
 
 <div class="jumbotron">
     <div class="container">

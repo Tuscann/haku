@@ -1,5 +1,12 @@
 <?php session_start() ?>
 
+<?php
+$config = require 'config.php';
+require 'core/database/Connection.php';
+$pdo = Connection::make($config['database']);
+require 'core/database/QueryBuilder.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +17,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Jumbotron Template for Bootstrap</title>
+    <title>Game reviews</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/jumbotron.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">

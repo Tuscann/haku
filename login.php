@@ -1,9 +1,6 @@
 <?php
-
 include_once 'header.php';
-require 'db_config.php';
 $_SESSION['message'] = "";
-
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
