@@ -44,7 +44,7 @@ class UsersController extends BaseController
 
             $password_hash = password_hash($password, PASSWORD_BCRYPT);
 
-            $isExistingUser = $this->model->isUserExists($email);
+            $isExistingUser = $this->model->isUserExistsByEmail($email);
 
             //if user exist set user existing msg and redirect to register
             if ($isExistingUser) {

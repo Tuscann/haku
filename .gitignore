@@ -3,7 +3,7 @@
 *.iml
 .idea/*
 
-/.htaccess
+
 /license.txt
 /readme.html
 /sitemap.xml
