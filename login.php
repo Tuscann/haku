@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                placeholder="Username">
                     </div>
                     <div class="form-group">
-                        <a class="pull-right" href="#">Forgot password?</a>
+                        <a class="pull-right" href="forgot_password.php">Forgot password?</a>
                         <label for="inputPassword">Password</label>
                         <input type="password" name="password" class="form-control" id="inputPassword"
                                placeholder="Password">
@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
 
         </div>
-        <script src="js/functions.js"></script>
+        <script src="content/js/functions.js"></script>
     </div>
 
 <?php

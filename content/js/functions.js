@@ -1,5 +1,5 @@
 function closeError() {
     $('.close').click(function () {
-        $('.alert-danger').slideDown();
+        $('.close').fadeOut(6000);
     });
 }
