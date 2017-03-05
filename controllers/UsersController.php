@@ -15,32 +15,27 @@ class UsersController extends BaseController
             $confirm_email = $_POST['confirm_email'];
             $password = $_POST['password'];
             $confirm_password = $_POST['confirm_password'];
-            $validation = true;
 
             //name can contain only alpha characters, digits, dash and underscore
             if (!preg_match("/^[a-zA-Z0-9_-]{5,}$/", $username)) {
-                $username_error = "Username must contain only alphabets and space";
-                $validation = false;
+                $this->setValidationError("username", "Username must contain only alphabets and space");
             }
             // checking for valid email
             if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                $email_error = "Please enter valid email address";
-                $validation = false;
+                $this->setValidationError("email", "Please enter a valid email address");
             }
 
             if ($email != $confirm_email) {
-                $confirm_email_error = "Email and Confirm Email doesn't match";
-                $validation = false;
+                $this->setValidationError("confirm-email", "Email and Confirm Email doesn't match");
+                //$confirm_email_error = "Email and Confirm Email doesn't match";
             }
             // password can contain at least 6 characters
             if (strlen($password) < 6) {
-                $password_error = "Password must be minimum of 6 characters";
-                $validation = false;
+                $this->setValidationError("password", "Password must be minimum of 6 characters");
             }
             // check whether password matches with confirm password
             if ($password != $confirm_password) {
-                $confirm_password_error = "Password and Confirm Password doesn't match";
-                $validation = false;
+                $this->setValidationError("confirm-password", "Password and Confirm Password doesn't match");
             }
 
             $password_hash = password_hash($password, PASSWORD_BCRYPT);
@@ -49,11 +44,12 @@ class UsersController extends BaseController
 
             //if user exist set user existing msg and redirect to register
             if ($isExistingUser) {
-                $_SESSION['message'] = 'User with this email already exists!';
+                $this->addErrorMessage("User with this email already exists!");
+                //$_SESSION['message'] = 'User with this email already exists!';
                 header("Location: " . APP_ROOT . "/users/register");
             } else { // if not exists
 
-                if ($validation) {
+                if ($this->formValid()) {
                     if ($this->model->register($username, $password_hash, $email)) {
                         $_SESSION['logged_in'] = true;
                         $_SESSION['username'] = $username;
@@ -61,7 +57,7 @@ class UsersController extends BaseController
 
                         header('Location: ' . APP_ROOT);
                     } else {
-                        $_SESSION['message'] = 'Registration failed';
+                        $this->addErrorMessage("Registration failed.");
                     }
                 }
             }
@@ -83,13 +79,12 @@ class UsersController extends BaseController
                     $_SESSION['username'] = $currentUser['username'];
                     $_SESSION['logged_in'] = true;
                     $_SESSION['message'] = 'You are logged in!';
+                    $this->addInfoMessage("Login successful!");
                     header('Location: ' .APP_ROOT);
-                }
-
+                } else {
+                    $this->setValidationError("inputUsernameEmail", "Wrong username/password combination.");}
             } else {
-                $_SESSION['message'] = "User with that username doesn't exist!";
-            }
-
+                $this->setValidationError("inputUsernameEmail", "Wrong username/password combination.");}
         }
 
     }
@@ -98,6 +93,7 @@ class UsersController extends BaseController
     {
         session_destroy();
         header('Location: ' . APP_ROOT);
+        $this->addInfoMessage("Log out successful.");
     }
 
 

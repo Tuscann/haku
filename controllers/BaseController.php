@@ -50,6 +50,11 @@ abstract class BaseController
             array('text' => $msg, 'type' => $type));
     }
 
+    function addInfoMessage(string $infoMsg)
+    {
+        $this->addMessage($infoMsg, 'info');
+    }
+
     function addErrorMessage(string $errorMsg)
     {
         $this->addMessage($errorMsg, 'error');
@@ -58,6 +63,11 @@ abstract class BaseController
     function setValidationError(string $fieldName, string $errorMsg)
     {
         $this->validationErrors[$fieldName] = $errorMsg;
+    }
+
+    function formValid() : bool
+    {
+        return count($this->validationErrors) == 0;
     }
 
     public function renderView(string $viewName = null, bool $includeLayout = true)

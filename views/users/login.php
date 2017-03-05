@@ -19,11 +19,15 @@
                 <span class="span-or">or</span>
             </div>
 
+                <?php if (isset($this->validationErrors['inputUsernameEmail']))
+                    echo '<div class="form-group col-lg-12 alert alert-danger text-center">
+                <a class="close" data-dismiss="alert" onclick="closeError()">×</a>'
+                        . $this->validationErrors['inputUsernameEmail'] . '</div>'; ?>
+
             <form role="form" method="POST" >
                 <div class="form-group">
                     <label for="inputUsernameEmail">Username</label>
-                    <input type="text" name="username" class="form-control" id="inputUsernameEmail"
-                           placeholder="Username">
+                    <input type="text" name="username" class="form-control" id="inputUsernameEmail" placeholder="Username">
                 </div>
                 <div class="form-group">
                     <a class="pull-right" href="forgot_password.php">Forgot password?</a>
@@ -36,6 +40,7 @@
                         <input type="checkbox">
                         Remember me </label>
                 </div>
+
                 <button type="submit" class="btn btn btn-success">
                     Log In
                 </button>
