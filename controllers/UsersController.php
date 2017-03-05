@@ -15,31 +15,32 @@ class UsersController extends BaseController
             $confirm_email = $_POST['confirm_email'];
             $password = $_POST['password'];
             $confirm_password = $_POST['confirm_password'];
+            $validation = true;
 
             //name can contain only alpha characters, digits, dash and underscore
             if (!preg_match("/^[a-zA-Z0-9_-]{5,}$/", $username)) {
                 $username_error = "Username must contain only alphabets and space";
-
+                $validation = false;
             }
             // checking for valid email
             if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 $email_error = "Please enter valid email address";
-
+                $validation = false;
             }
 
             if ($email != $confirm_email) {
                 $confirm_email_error = "Email and Confirm Email doesn't match";
-
+                $validation = false;
             }
             // password can contain at least 6 characters
             if (strlen($password) < 6) {
                 $password_error = "Password must be minimum of 6 characters";
-
+                $validation = false;
             }
             // check whether password matches with confirm password
             if ($password != $confirm_password) {
                 $confirm_password_error = "Password and Confirm Password doesn't match";
-
+                $validation = false;
             }
 
             $password_hash = password_hash($password, PASSWORD_BCRYPT);
@@ -52,16 +53,17 @@ class UsersController extends BaseController
                 header("Location: " . APP_ROOT . "/users/register");
             } else { // if not exists
 
-                if ($this->model->register($username, $password_hash, $email)) {
-                    $_SESSION['logged_in'] = true;
-                    $_SESSION['username'] = $username;
-                    $_SESSION['message'] = 'You are successfully registered!';
+                if ($validation) {
+                    if ($this->model->register($username, $password_hash, $email)) {
+                        $_SESSION['logged_in'] = true;
+                        $_SESSION['username'] = $username;
+                        $_SESSION['message'] = 'You are successfully registered!';
 
-                    header('Location: ' . APP_ROOT);
-                } else {
-                    $_SESSION['message'] = 'Registration failed';
+                        header('Location: ' . APP_ROOT);
+                    } else {
+                        $_SESSION['message'] = 'Registration failed';
+                    }
                 }
-
             }
         }
     }
@@ -76,7 +78,7 @@ class UsersController extends BaseController
             // user exists
             if ($isUserExists) {
                 $currentUser = $this->model->login($username, $password);
-                if (password_verify($_POST['password'], PASSWORD_DEFAULT)) {
+                if (password_verify($_POST['password'], $currentUser['password'])) {
                     $_SESSION['userId'] = $currentUser['id'];
                     $_SESSION['username'] = $currentUser['username'];
                     $_SESSION['logged_in'] = true;

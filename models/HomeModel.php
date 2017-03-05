@@ -1,7 +1,7 @@
 <?php
 class HomeModel extends BaseModel
 {
-    //returns the latest 5 reviews
+    //returns the latest 3 reviews
     function getLastReviews(): array {
         $statement = self::$db->prepare("SELECT * FROM reviews LIMIT 3");
         $statement->execute();
