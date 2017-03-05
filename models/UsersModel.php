@@ -11,7 +11,7 @@ class UsersModel extends BaseModel
 
     public function register(string $username, string $password_hash, string $email)
     {
-        $statement = self::$db->prepare("INSERT INTO users (username, password_hash, email) "
+        $statement = self::$db->prepare("INSERT INTO users (username, password, email) "
                 . "VALUES ('$username', '$password_hash', '$email')");
         $user = $statement->execute();
 

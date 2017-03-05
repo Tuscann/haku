@@ -76,7 +76,7 @@ class UsersController extends BaseController
             // user exists
             if ($isUserExists) {
                 $currentUser = $this->model->login($username, $password);
-                if (password_verify($_POST['password'], $currentUser['password_hash'])) {
+                if (password_verify($_POST['password'], PASSWORD_DEFAULT)) {
                     $_SESSION['userId'] = $currentUser['id'];
                     $_SESSION['username'] = $currentUser['username'];
                     $_SESSION['logged_in'] = true;
@@ -88,7 +88,6 @@ class UsersController extends BaseController
                 $_SESSION['message'] = "User with that username doesn't exist!";
             }
 
-
         }
 
     }
@@ -96,6 +95,8 @@ class UsersController extends BaseController
     function logout()
     {
         session_destroy();
-        header('Location: ' .APP_ROOT);
+        header('Location: ' . APP_ROOT);
     }
+
+
 }
