@@ -19,6 +19,19 @@
     <script src="<?= APP_ROOT ?>/content/js/bootstrap.min.js"></script>
     <script src="<?= APP_ROOT ?>/content/js/functions.js"></script>
     <link rel="stylesheet" href="<?= APP_ROOT ?>/content/css/style.css">
+    <link rel="stylesheet" type="text/css" href="<?= APP_ROOT ?>/content/css/view.css">
+
+
+    <script src="<?= APP_ROOT ?>/content/js/jquery-1.9.1.min.js"></script>
+    <script src="<?= APP_ROOT ?>/content/js/jssor.slider.mini.js"></script>
+    <script src="<?= APP_ROOT ?>/content/js/slideshow.js"></script>
+    <script src="<?= APP_ROOT ?>http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="<?= APP_ROOT ?>responsiveslides.min.js"></script>
+
+
+
+
+
 </head>
 
 <body>
