@@ -16,10 +16,18 @@ class HomeModel extends BaseModel
         return $result = $statement->fetchAll();
     }
 
-    function getReviewById($id) {
+    function getReviewById($id)
+    {
         $statement = self::$db->prepare("SELECT * FROM reviews WHERE id = '$id' LIMIT 1");
         $statement->execute();
         return $statement->fetch();
+    }
+
+    function getReviewImages($id)
+    {
+        $statement = self::$db->prepare("SELECT * FROM images WHERE review_id = '$id'");
+        $statement->execute();
+        return $statement->fetchAll();
     }
 
 

@@ -25,8 +25,8 @@
     <script src="<?= APP_ROOT ?>/content/js/jquery-1.9.1.min.js"></script>
     <script src="<?= APP_ROOT ?>/content/js/jssor.slider.mini.js"></script>
     <script src="<?= APP_ROOT ?>/content/js/slideshow.js"></script>
-    <script src="<?= APP_ROOT ?>http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script src="<?= APP_ROOT ?>responsiveslides.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="<?= APP_ROOT ?>/content/js/responsiveslides.js"></script>
 
 
 

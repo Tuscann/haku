@@ -10,7 +10,7 @@
         </div>
         <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;">
             <div data-p="225.00" style="display: none;">
-                <img src="<?= APP_ROOT?>/content/images/pic1.jpg" />
+                <img src="<?= APP_ROOT . $this->reviewImages[0]['path'] . $this->reviewImages[0]['name']?>.jpg" <?php array_splice($this->reviewImages, 0, 1);?> />
                 <div style="position: absolute; top: 30px; left: 30px; width: 480px; height: 120px; font-size: 50px; color: #ffffff; line-height: 60px;"></div>
                 <div style="position: absolute; top: 300px; left: 30px; width: 480px; height: 120px; font-size: 30px; color: #ffffff; line-height: 38px;"></div>
                 <div data-u="caption" data-t="0" style="position: absolute; top: 100px; left: 600px; width: 445px; height: 300px;"></div>
@@ -19,10 +19,10 @@
                 </div>
             </div>
             <div data-p="225.00" style="display: none;">
-                <img src="<?= APP_ROOT?>/content/images/pic2.jpg" />
+                <img src="<?= APP_ROOT . $this->reviewImages[0]['path'] . $this->reviewImages[0]['name']?>.jpg" <?php array_splice($this->reviewImages, 0, 1);?>/>
             </div>
             <div data-p="225.00" style="display: none;">
-                <img data-u="image" src="<?= APP_ROOT?>/content/images/pic3.jpg" />
+                <img data-u="image" src="<?= APP_ROOT . $this->reviewImages[0]['path'] . $this->reviewImages[0]['name']?>.jpg" <?php array_splice($this->reviewImages, 0, 1);?>/>
             </div>
         </div>
         <!-- Bullet Navigator -->
@@ -38,9 +38,7 @@
     <!-- #endregion Jssor Slider End -->
 </div>
 
-<h1><?=htmlspecialchars($this->review['title'])?></h1>
-<p><strong>Posted on:</strong> <?=(new DateTime($this->review['date']))->format('d-M-Y')?></p>
-<p><?=$this->review['content']?></p>
+
 <hr>
 
 <!-- Section -->
@@ -49,15 +47,16 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="text-primary">The Witcher 3</h2>
+                <h2 class="text-primary"><?= htmlspecialchars($this->review['title'])?></h2>
+                <p><strong>Posted on:</strong> <?=(new DateTime($this->review['date']))->format('d-M-Y')?></p>
                 <hr class="primary">
             </div>
         </div>
     </div>
     <div class="container">
-        <p class="osn"> The climactic third game in the fantasy RPG series, The Witcher 3: Wild Hunt is a unique combination of a non-linear story and an open world -- a character-driven, non-linear story experience focused on player choice, tactical combat and a rich, living environment. This world is populated with intelligent inhabitants and animated by new mechanics that make it a dynamic, living, breathing place. As players travel the world, witnessing many a sunrise or sunset, enduring torrential rains or sweltering heat, they see predators hunting their prey, villages defending themselves against monsters, lovers meeting by moonlight. The new in-game economy system varies the price of goods based on surrounding conditions or their place of origin, encouraging players to seek out through hunting and collecting items that are in demand. With a re-envisioned approach to the narrative, the game will be accessible to both newcomers and old time fans, and a tutorial eases players into the game. Combat has been redesigned in order to combine traditional RPG elements with the speed and precision of a dedicated fighting game. All of these gameplay features are integrated into a robust RPG system at the heart of the game.</p>
+        <p class="osn"><?= htmlspecialchars($this->review['content'])?></p>
         <!-- Снимката да бъде от дясно на текста или както прецените че ще е по - добре визуализирана-->
-        <img src="<?= APP_ROOT ?>/content/images/Witcher3.jpg"
+        <img src="<?= APP_ROOT . $this->reviewImages[0]['path'] . $this->reviewImages[0]['name']?>.jpg" <?php array_splice($this->reviewImages, 0, 1);?> />
     </div>
 </section>
 
