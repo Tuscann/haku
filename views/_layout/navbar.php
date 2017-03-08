@@ -16,10 +16,11 @@
                 <li><a href="#">PS4</a></li>
                 <li><a href="#">Xbox One</a></li>
                 <li><a href="#">Reviews</a></li>
-                <li><a href="#">News</a></li>
+                <li><a href="<?=APP_ROOT?>/news">News</a></li>
             </ul>
             <?php
             if (empty($_SESSION['logged_in'])) {
+                var_dump($this->isLoggedIn)
                 ?>
                 <ul class="nav navbar-nav navbar-right nav-auth">
                     <li>

@@ -3,7 +3,7 @@
 
         <div class="main">
 
-            <h3>Please Log In, or <a href="register.php">Sign Up</a></h3>
+            <h3>Please Log In, or <a href="<?=APP_ROOT?>/users/register">Sign Up</a></h3>
             <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <a href="#" class="btn btn-lg btn-primary btn-block"><span class="btn-label"><i
@@ -45,18 +45,6 @@
                     Log In
                 </button>
             </form>
-            <?php
-            if (!empty($_SESSION['message'])) {
-                ?>
-                <div class="form-group col-lg-12 alert alert-danger text-center">
-                    <a class="close" data-dismiss="alert" onclick="closeError()">×</a>
-                    <?php
-                    if (isset($_SESSION['message'])) {
-                        echo $_SESSION['message'];
-                    }
-                    ?>
-                </div>
-            <?php } ?>
         </div>
 
     </div>

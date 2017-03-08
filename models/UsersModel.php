@@ -6,16 +6,26 @@ class UsersModel extends BaseModel
         $statement = self::$db->prepare("SELECT * FROM users WHERE username='$username'");
         $statement->execute();
         $user = $statement->fetch();
-        return $user;
+
+        var_dump($user['password_hash']);
+        var_dump(password_hash($password, PASSWORD_BCRYPT));
+        $isVerifiedPass = password_verify($password, $user['password_hash']);
+        var_dump($isVerifiedPass);
+        if($isVerifiedPass) {
+            return $user;
+        }
+
+        return false;
     }
 
     public function register(string $username, string $password_hash, string $email)
     {
-        $statement = self::$db->prepare("INSERT INTO users (username, password, email) "
+        $statement = self::$db->prepare("INSERT INTO users (username, password_hash, email) "
                 . "VALUES ('$username', '$password_hash', '$email')");
-        $user = $statement->execute();
+        $statement->execute();
+        $user_id = self::$db->query("SELECT LAST_INSERT_ID()")->fetch();
 
-        return $user;
+        return $user_id;
     }
 
     function isUserExistsByEmail(string $email): bool
