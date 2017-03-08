@@ -1,0 +1,9 @@
+.user-dropdown {
+    display: block;
+    position: relative;
+    margin-top: 8px;
+}
+
+li {
+    text-align: center;
+}
