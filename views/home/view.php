@@ -1,4 +1,3 @@
-
 <!-- Slideshow -->
 <div class="slideshow">
     <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1300px; height: 500px; overflow:
@@ -6,7 +5,7 @@
         <!-- Loading Screen -->
         <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
             <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
-            <div style="position:absolute;display:block;background:url('/content/images/images/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+            <div style="position:absolute;display:block;background:url('<?=APP_ROOT?>content/images/images/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
         </div>
         <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;">
             <div data-p="225.00" style="display: none;">
@@ -56,7 +55,7 @@
     <div class="container">
         <p class="osn"><?= htmlspecialchars($this->review['content'])?></p>
         <!-- Снимката да бъде от дясно на текста или както прецените че ще е по - добре визуализирана-->
-        <img src="<?= APP_ROOT . $this->reviewImages[0]['path'] . $this->reviewImages[0]['name']?>.jpg" <?php array_splice($this->reviewImages, 0, 1);?> />
+        <img src="<?= APP_ROOT . $this->reviewImages[0]['path'] . "/" . $this->reviewImages[0]['name']?>.jpg" <?php array_splice($this->reviewImages, 0, 1);?> />
     </div>
 </section>
 
@@ -86,6 +85,38 @@
 
             </div>
 
+        </div>
+    </div>
+
+</section>
+
+<section>
+    <div class="submit-comment-div">
+            <form class="submit-comment" method="post" action="">
+                <div class="form-group">
+                    <label for="comment">Submit a comment: </label><br>
+                    <textarea class="form-control-comment" id="comment" name="comment" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" name="submit-comment">Submit</button>
+            </form>
+        </div>
+</section>
+
+<section id="four">
+    <div class="container">
+        <div class="row">
+            <div class="media-center">
+                <h2 class="text-primary-media">Comments</h2>
+                <hr>
+                <?php foreach ($this->comments as $comment) :?>
+                    <div class="comment-container">
+                        <p><img class="comment-pic" src="<?=APP_ROOT?>/content/images/profile-pics/default.png"/>
+                            <strong><a target="_blank" href="<?=APP_ROOT?>/users/profile/<?=$comment['username']?>"><?=$comment['username']?></a></strong> - <?= (new DateTime($comment['date']))->format('d-M-Y')?></p>
+                        <p class="comment-content"><?=htmlspecialchars($comment['content'])?></p>
+                        <hr>
+                    </div>
+                <?php endforeach; ?>
+            </div>
         </div>
     </div>
 

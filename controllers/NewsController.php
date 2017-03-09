@@ -6,4 +6,5 @@ class NewsController extends BaseController
     {
         echo 'Im in news index';
     }
+
 }

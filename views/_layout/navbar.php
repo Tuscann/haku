@@ -30,25 +30,25 @@
                     </li>
                 </ul>
             <?php } else {
-//
-                ?>
-                <ul class="nav navbar-nav navbar-right nav-auth user-dropdown">
-                    <li>
+            //
+            ?>
+            <ul class="nav navbar-nav navbar-right nav-auth user-dropdown">
+                <li>
                     <div class="dropdown">
                         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                 <span>Welcome, <strong><?php echo $_SESSION['username']?></strong>
                                 <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="<?=APP_ROOT?>/users/profile">Profile</a></li>
+                            <li><a href="<?=APP_ROOT?>/users/profile/<?=$_SESSION['username']?>">Profile</a></li>
                             <li><a href="<?=APP_ROOT?>/users/logout">Log out</a></li>
                         </ul>
 
-                    </li>
-                    </div>
-                </ul>
-            <?php } ?>
+                </li>
+        </div>
+        </ul>
+        <?php } ?>
 
-        </div><!--/.navbar-collapse -->
+    </div><!--/.navbar-collapse -->
     </div>
 </nav>

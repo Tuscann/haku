@@ -56,7 +56,7 @@ html{
     width: 40px;
     height: 58px;
     cursor: pointer;
-    background: url('/content/images/images/a22.png') center center no-repeat;
+    background: url('/content/images/a22.png') center center no-repeat;
     overflow: hidden;
 }
 
@@ -125,4 +125,5 @@ html{
     text-align: left;
     border: 2px solid;
     border-color: #EEEEEE;
+    background: url('<?=APP_ROOT?>/content/images/a22.png') center center no-repeat;
 }

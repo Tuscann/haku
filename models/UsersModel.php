@@ -6,17 +6,9 @@ class UsersModel extends BaseModel
         $statement = self::$db->prepare("SELECT * FROM users WHERE username='$username'");
         $statement->execute();
         $user = $statement->fetch();
-
-        var_dump($user['password_hash']);
-        var_dump(password_hash($password, PASSWORD_BCRYPT));
-        $isVerifiedPass = password_verify($password, $user['password_hash']);
-        var_dump($isVerifiedPass);
-        if($isVerifiedPass) {
-            return $user;
-        }
-
-        return false;
+        return $user;
     }
+
 
     public function register(string $username, string $password_hash, string $email)
     {
@@ -48,4 +40,15 @@ class UsersModel extends BaseModel
         return false;
     }
 
+    public function getCurrentUserInfo($name) {
+        $statement = self::$db->prepare("SELECT * FROM users WHERE username='$name'");
+        $statement->execute();
+        return $user = $statement->fetch();
+    }
+
+    public function getUserById($id): array {
+        $statement = self::$db->prepare("SELECT * FROM users WHERE id='$id'");
+        $statement->execute();
+        return $user = $statement->fetch();
+    }
 }

@@ -53,4 +53,43 @@ h3 {
 .review-pic {
     width: 100%;
 }
+
+.comment-pic {
+    border-radius: 50%;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.comment-container {
+    margin: 10px;
+}
+
+.comment-content {
+    padding-left: 50px;
+}
+
+.form-control-comment {
+    width: 400px;
+}
+
+.submit-comment {
+    margin: 10px;
+}
+
+
+.submit-comment-div {
+    margin-top: 50px;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    height: 200px;
+    margin-top: 20px;
+}
+
+.profile {
+    display: block;
+    align-content: center;
+}
 /* End login form styles */
+

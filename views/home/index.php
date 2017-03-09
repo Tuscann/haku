@@ -12,7 +12,6 @@
     <h2>Latest reviews</h2>
     <hr>
     <div class="row">
-
         <?php foreach ($this->reviews as $review) : ?>
             <div class="col-md-4">
                 <h2><?=htmlentities($review['title'])?></h2>
@@ -22,6 +21,5 @@
                 <p><a class="btn btn-default" href="<?=APP_ROOT?>/home/view/<?=$review['id']?>" role="button">Read more &raquo;</a></p>
             </div>
         <?php endforeach; ?>
-
     </div>
 </div>

@@ -75,8 +75,7 @@ class UsersController extends BaseController
             // user exists
             if ($isUserExists) {
                 $currentUser = $this->model->login($username, $password);
-                var_dump($currentUser);
-                if ($currentUser) {
+                if (password_verify($_POST['password'], $currentUser['password'])) {
                     $_SESSION['userId'] = $currentUser['id'];
                     $_SESSION['username'] = $currentUser['username'];
                     $_SESSION['logged_in'] = true;
@@ -84,9 +83,9 @@ class UsersController extends BaseController
                     $this->addInfoMessage("Login successful!");
                     header('Location: ' .APP_ROOT);
                 } else {
-                    $this->setValidationError("inputUsernameEmail", "Wrong username/password combination.11");}
+                    $this->setValidationError("inputUsernameEmail", "Wrong username/password combination.");}
             } else {
-                $this->setValidationError("inputUsernameEmail", "This user doesn`t exists.");}
+                $this->setValidationError("inputUsernameEmail", "Wrong username/password combination.");}
         }
 
     }
@@ -98,5 +97,9 @@ class UsersController extends BaseController
         $this->addInfoMessage("Log out successful.");
     }
 
+    function profile($name) {
+        $user = $this->model->getCurrentUserInfo($name);
+        $this->user = $user;
+    }
 
 }
