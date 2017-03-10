@@ -64,4 +64,9 @@ ON users.id=comments.user_id WHERE review_id='$id' ORDER BY date DESC");
         $query->execute();
         return $user = $query->fetch();
     }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> origin/master
 }

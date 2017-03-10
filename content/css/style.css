@@ -87,6 +87,15 @@ h3 {
     margin-top: 20px;
 }
 
+<<<<<<< HEAD
+=======
+.navbar-pic {
+    border-radius: 50%;
+    height: 25px;
+}
+
+
+>>>>>>> origin/master
 .profile {
     display: block;
     align-content: center;

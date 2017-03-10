@@ -32,11 +32,19 @@
             <?php } else {
             //
             ?>
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
             <ul class="nav navbar-nav navbar-right nav-auth user-dropdown">
                 <li>
                     <div class="dropdown">
                         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+<<<<<<< HEAD
                                 <span>Welcome, <strong><?php echo $_SESSION['username']?></strong>
+=======
+                            <img class="navbar-pic" src="<?=APP_ROOT?>/content/images/profile-pics/default.png" alt=""><?php echo $_SESSION['username']?>
+>>>>>>> origin/master
                                 <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">

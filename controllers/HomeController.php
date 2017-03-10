@@ -19,11 +19,19 @@ class HomeController extends BaseController
     }
 
     function view($id) {
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
         $this->submitComment($id);
         // get all comments
         $comments = $this->model->getCommentsById($id);
         $this->comments = $comments;
         // get all reviews
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
         $review = $this->model->getReviewById($id);
         $this->review = $review;
         // get all reviews images
