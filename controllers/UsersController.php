@@ -44,9 +44,8 @@ class UsersController extends BaseController
 
             //if user exist set user existing msg and redirect to register
             if ($isExistingUser) {
-                $this->addErrorMessage("User with this email already exists!");
-                //$_SESSION['message'] = 'User with this email already exists!';
-                header("Location: " . APP_ROOT . "/users/register");
+                $this->setValidationError("already_exists", "User with this email already exists!");
+
             } else { // if not exists
 
                 if ($this->formValid()) {
@@ -74,14 +73,14 @@ class UsersController extends BaseController
 
             // user exists
             if ($isUserExists) {
-                $currentUser = $this->model->login($username, $password);
-                if (password_verify($_POST['password'], $currentUser['password'])) {
+                $currentUser = $this->model->login($username);
+                if (password_verify($password, $currentUser['password'])) {
                     $_SESSION['userId'] = $currentUser['id'];
                     $_SESSION['username'] = $currentUser['username'];
                     $_SESSION['logged_in'] = true;
                     $_SESSION['message'] = 'You are logged in!';
                     $this->addInfoMessage("Login successful!");
-                    header('Location: ' .APP_ROOT);
+                    header('Location: ' . APP_ROOT);
                 } else {
                     $this->setValidationError("inputUsernameEmail", "Wrong username/password combination.");}
             } else {

@@ -92,11 +92,7 @@
 
 <section>
     <div class="submit-comment-div">
-<<<<<<< HEAD
-            <form class="submit-comment" method="post" action="">
-=======
             <form class="submit-comment" method="post" action="?id=44#comments">
->>>>>>> origin/master
                 <div class="form-group">
                     <label for="comment">Submit a comment: </label><br>
                     <textarea class="form-control-comment" id="comment" name="comment" rows="3"></textarea>
@@ -107,11 +103,7 @@
 </section>
 
 <section id="four">
-<<<<<<< HEAD
-    <div class="container">
-=======
-    <div class="container" id="comments">
->>>>>>> origin/master
+    <div id="comments" class="container">
         <div class="row">
             <div class="media-center">
                 <h2 class="text-primary-media">Comments</h2>
@@ -119,11 +111,9 @@
                 <?php foreach ($this->comments as $comment) :?>
                     <div class="comment-container">
                         <p><img class="comment-pic" src="<?=APP_ROOT?>/content/images/profile-pics/default.png"/>
-<<<<<<< HEAD
-                            <strong><a target="_blank" href="<?=APP_ROOT?>/users/profile/<?=$comment['username']?>"><?=$comment['username']?></a></strong> - <?= (new DateTime($comment['date']))->format('d-M-Y')?></p>
-=======
-                            <strong><a target="_blank" href="<?=APP_ROOT?>/users/profile/<?=$comment['username']?>"><?=$comment['username']?></a></strong> - <?= (new DateTime($comment['date']))->format('d-M-Y h:m:s')?></p>
->>>>>>> origin/master
+                            <strong>
+                                <a target="_blank" href="<?=APP_ROOT?>/users/profile/<?=$comment['username']?>"><?=$comment['username']?></a>
+                            </strong> - <?= var_dump($comment['date']); (new DateTime($comment['date']))->format('d-M-Y')?></p>
                         <p class="comment-content"><?=htmlspecialchars($comment['content'])?></p>
                         <hr>
                     </div>

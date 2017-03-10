@@ -125,5 +125,5 @@ html{
     text-align: left;
     border: 2px solid;
     border-color: #EEEEEE;
-    background: url('<?=APP_ROOT?>/content/images/a22.png') center center no-repeat;
+    /*background: url('<?=APP_ROOT?>/content/images/a22.png') center center no-repeat;*/
 }

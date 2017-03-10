@@ -6,20 +6,10 @@
 
 
             <form method="POST" name="sign_up">
-                <?php
-                if (!empty($_SESSION['message'])) {
-                    ?>
-                    <div class="form-group col-lg-12 alert alert-danger text-center">
-                        <a class="close" data-dismiss="alert" onclick="closeError()">×</a>
-                        <?php
-                        if (isset($_SESSION['message'])) {
-                            echo $_SESSION['message'];
-                            unset($_SESSION['message']);
-                        }
-
-                        ?>
-                    </div>
-                <?php } ?>
+                <?php if (isset($this->validationErrors['already_exists']))
+                    echo '<div class="form-group col-lg-12 alert alert-danger text-center">
+                <a class="close" data-dismiss="alert" onclick="closeError()">×</a>'
+                        . $this->validationErrors['already_exists'] . '</div>'; ?>
 
                 <div class="form-group col-lg-12">
                     <label for="username">Username</label>

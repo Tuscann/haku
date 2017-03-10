@@ -1,18 +1,18 @@
 <?php
 class UsersModel extends BaseModel
 {
-    public function login(string $username, string $password)
+    public function login(string $username)
     {
         $statement = self::$db->prepare("SELECT * FROM users WHERE username='$username'");
         $statement->execute();
         $user = $statement->fetch();
-        return $user;
+        return $user;        
     }
 
 
     public function register(string $username, string $password_hash, string $email)
     {
-        $statement = self::$db->prepare("INSERT INTO users (username, password_hash, email) "
+        $statement = self::$db->prepare("INSERT INTO users (username, password, email) "
                 . "VALUES ('$username', '$password_hash', '$email')");
         $statement->execute();
         $user_id = self::$db->query("SELECT LAST_INSERT_ID()")->fetch();
