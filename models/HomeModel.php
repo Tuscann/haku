@@ -6,7 +6,7 @@ class HomeModel extends BaseModel
     //returns the latest 3 reviews
     function getLastReviews(): array
     {
-        $statement = self::$db->prepare("SELECT * FROM reviews LIMIT 3");
+        $statement = self::$db->prepare("SELECT * FROM reviews ORDER BY date DESC LIMIT 3");
         $statement->execute();
         return $statement->fetchAll();
     }
