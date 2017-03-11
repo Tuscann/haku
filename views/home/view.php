@@ -113,7 +113,7 @@
                         <p><img class="comment-pic" src="<?=APP_ROOT?>/content/images/profile-pics/default.png"/>
                             <strong>
                                 <a target="_blank" href="<?=APP_ROOT?>/users/profile/<?=$comment['username']?>"><?=$comment['username']?></a>
-                            </strong> - <?= var_dump($comment['date']); (new DateTime($comment['date']))->format('d-M-Y')?></p>
+                            </strong> - <?= (new DateTime($comment['date']))->format('d-M-Y')?></p>
                         <p class="comment-content"><?=htmlspecialchars($comment['content'])?></p>
                         <hr>
                     </div>

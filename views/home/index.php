@@ -11,15 +11,24 @@
     <!-- Example row of columns -->
     <h2>Latest reviews</h2>
     <hr>
-    <div class="row">
+    <div class="reviews-row">
         <?php foreach ($this->reviews as $review) : ?>
-            <div class="col-md-4">
-                <h2><?=htmlentities($review['title'])?></h2>
-                <img class="review-pic" src="http://cdn.edgecast.steamstatic.com/steam/apps/292030/header.jpg?t=1479919850" alt="review-pic">
-                <p><?=substr($review['content'], 0, 200)?></p>
-                <p><?=  $review['date']?></p>
-                <p><a class="btn btn-default" href="<?=APP_ROOT?>/home/view/<?=$review['id']?>" role="button">Read more &raquo;</a></p>
+            <div class="col-md-4 review">
+                <img class="review-pic" src="<?=APP_ROOT.$review['picture']?>">
+                <span class="notify-badge">PC</span>
+                <div class="review-content">
+                    <div class="review-info">
+                        <h3><a class="title" href="<?=APP_ROOT?>/home/view/<?=$review['id']?>"><?=htmlentities($review['title'])?></a></h3>
+                        <p><?=(new DateTime($review['date']))->format('M d, Y')?></p>
+                    <p><?=substr($review['content'], 0, 90)."..."?></p>
+                    </div>
+                </div>
             </div>
         <?php endforeach; ?>
     </div>
+    <div class="text-center more-reviews">
+        <a class="btn btn-primary" href="#" role="button">Show more</a>
+    </div>
+    <h2>Latest news</h2>
+    <hr>
 </div>

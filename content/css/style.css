@@ -1,10 +1,18 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+@font-face {
+    font-family: 'Raleway-ExtraBold';
+    src: url('../fonts/Raleway/Raleway-Bold.ttf')  format('truetype');
+}
+
 @font-face {
     font-family: GAME;
     src: url('../fonts/GAME.eot') format('eot');
 }
 
-html {
-    font-family: GAME;
+html *
+{
+    font-family: 'Raleway', sans-serif;
 }
 
 .nav-auth li a {
@@ -54,13 +62,51 @@ html {
     margin-top: 0px !important;
     margin-bottom: 0px !important;
 }
-h3 {
+
+.review-info {
+    margin-left: 23px;
+    margin-bottom: 25px;
+    font-family: 'Raleway-ExtraBold', sans-serif;
+    color: #848484;
+}
+
+.review-content a {
+    color: #333333;
+    text-decoration: none;
+}
+
+.review-content a:hover {
+    color: #4086E0;
+}
+
+.review-pic {
+    position:relative;
+    display:inline-block;
+}
+.notify-badge{
+    position: absolute;
+    right:26px;
+    top:10px;
+    background:#2776DC;
     text-align: center;
-    line-height: 300%;
+    border-radius: 12px 12px 12px 12px;
+    color:white;
+    padding:5px 10px;
+    font-size:13px;
 }
 
 .review-pic {
     width: 100%;
+    border-top-right-radius: 2%;
+    border-top-left-radius: 2%;
+}
+
+.review-content {
+    size: 100px;
+    border: 1px solid #DCDCDC;
+    border-bottom-right-radius: 2%;
+    border-bottom-left-radius: 2%;
+    margin-bottom: 20px;
 }
 
 .comment-pic {
@@ -87,7 +133,7 @@ h3 {
 
 
 .submit-comment-div {
-    margin-top: 50px;
+
 }
 
 .profile-pic {
