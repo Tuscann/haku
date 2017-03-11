@@ -19,7 +19,7 @@
                 <li><a href="<?= APP_ROOT ?>/news/">News</a></li>
             </ul>
             <?php
-            if (empty($_SESSION['logged_in'])) {
+            if (empty($_SESSION['loggedIn'])) {
                 ?>
                 <ul class="nav navbar-nav navbar-right nav-auth">
                     <li>
@@ -43,7 +43,15 @@
                                     <strong>
                                         <?php echo $_SESSION['username'] ?>
                                     </strong>
-                                     <img class="navbar-pic" src="<?= APP_ROOT ?>/content/images/profile-pics/default.png"
+                                    <?php
+                                    $imagePath = APP_ROOT;
+                                    if ($_SESSION['profile-pic'] != NULL) {
+                                        $imagePath = $imagePath . $_SESSION['profile-pic'];
+                                    } else {
+                                        $imagePath = $imagePath . '/content/images/profile-pics/default.png';
+                                    }
+                                    ?>
+                                     <img class="navbar-pic" src="<?= $imagePath ?>"
                                           alt="">
                                 </span>
                                     <span class="caret"></span>

@@ -31,8 +31,8 @@ class HomeModel extends BaseModel
     public function getCommentsById($id)
     {
         $statement = self::$db->prepare(
-            "SELECT comments.content, comments.date, users.username FROM users INNER JOIN Comments
-             ON users.id=comments.user_id WHERE review_id='$id' ORDER BY date DESC");
+            "SELECT comments.content, comments.date, users.username, users.profile_pic FROM users INNER JOIN Comments
+             ON users.id=comments.user_id WHERE review_id='$id' ORDER BY date ASC");
         $statement->execute();
         return $statement->fetchAll();
     }
@@ -46,7 +46,6 @@ class HomeModel extends BaseModel
 
     public function submitComment($user_id, $review_id)
     {
-
         if (isset($_POST['submit-comment']) && strlen($_POST['comment']) > 1) {
             $comment = htmlspecialchars($_POST['comment']);
             $statement = self::$db->prepare(

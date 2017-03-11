@@ -20,7 +20,7 @@ html{
     /* size of bullet elment */
     width: 16px;
     height: 16px;
-    background: url('/content/images/images/b05.png') no-repeat;
+    background: url('/content/images/b05.png') no-repeat;
     overflow: hidden;
     cursor: pointer;
 }
@@ -94,10 +94,6 @@ html{
     
 }
 
-.class {
-    
-}
-
 #two {
     position: relative;
     top: 20px;
@@ -126,4 +122,13 @@ html{
     border: 2px solid;
     border-color: #EEEEEE;
     /*background: url('<?=APP_ROOT?>/content/images/a22.png') center center no-repeat;*/
+}
+
+.comment-form {
+    margin-top: 25px;
+    /*border: 2px solid #EEEEEE;*/
+}
+
+#login-message {
+    margin-top: 35px;
 }

@@ -49,9 +49,11 @@ class UsersController extends BaseController
             } else { // if not exists
 
                 if ($this->formValid()) {
-                    if ($this->model->register($username, $password_hash, $email)) {
-                        $_SESSION['logged_in'] = true;
+                    $userId = $this->model->register($username, $password_hash, $email);
+                    if ($userId) {
+                        $_SESSION['loggedIn'] = true;
                         $_SESSION['username'] = $username;
+                        $_SESSION['userId'] = $userId;
                         $_SESSION['message'] = 'You are successfully registered!';
 
                         header('Location: ' . APP_ROOT);
@@ -74,12 +76,15 @@ class UsersController extends BaseController
             // user exists
             if ($isUserExists) {
                 $currentUser = $this->model->login($username);
+
                 if (password_verify($password, $currentUser['password'])) {
                     $_SESSION['userId'] = $currentUser['id'];
                     $_SESSION['username'] = $currentUser['username'];
-                    $_SESSION['logged_in'] = true;
+                    $_SESSION['loggedIn'] = true;
+                    $_SESSION['profile-pic'] = $currentUser['profile_pic'];
                     $_SESSION['message'] = 'You are logged in!';
                     $this->addInfoMessage("Login successful!");
+
                     header('Location: ' . APP_ROOT);
                 } else {
                     $this->setValidationError("inputUsernameEmail", "Wrong username/password combination.");}
