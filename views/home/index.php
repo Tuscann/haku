@@ -20,7 +20,7 @@
                     <div class="review-info">
                         <h3><a class="title" href="<?=APP_ROOT?>/home/view/<?=$review['id']?>"><?=htmlentities($review['title'])?></a></h3>
                         <p><?=(new DateTime($review['date']))->format('M d, Y')?></p>
-                    <p><?=substr($review['content'], 0, 90)."..."?></p>
+                    <p><?=substr($review['content'], 0, 85)."..."?></p>
                     </div>
                 </div>
             </div>

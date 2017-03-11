@@ -1,7 +1,7 @@
 <?php
 
 class ReviewsController extends BaseController {
-
+    
     function index() {
 
     }
@@ -9,7 +9,6 @@ class ReviewsController extends BaseController {
     function PC() {
 
     }
-
 
     function PS4() {
 
