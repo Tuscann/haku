@@ -17,4 +17,17 @@ class ReviewsModel extends BaseModel {
     public function getReviewById($id) {
 
     }
+
+    public function getGames() {
+        $statement = self::$db->prepare("SELECT * FROM games ORDER BY name ASC");
+        $statement->execute();
+        return $statement->fetchAll();
+    }
+
+    public function getReviews($category) {
+        $statement = self::$db->prepare("SELECT * FROM reviews WHERE category='$category' ORDER BY DATE ASC LIMIT 3");
+        $statement->execute();
+        return $statement->fetchAll();
+    }
+
 }

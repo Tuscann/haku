@@ -19,6 +19,7 @@ class HomeController extends BaseController
         }
     }
 
+
     function view($reviewId) {
 
         $this->submitComment($reviewId);

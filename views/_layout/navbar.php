@@ -12,10 +12,10 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="#">PC</a></li>
-                <li><a href="#">PS4</a></li>
-                <li><a href="#">Xbox One</a></li>
-                <li><a href="<?= APP_ROOT ?>">Reviews</a></li>
+                <li><a href="<?= APP_ROOT ?>/reviews/PC">PC</a></li>
+                <li><a href="<?= APP_ROOT ?>/reviews/PS4">PS4</a></li>
+                <li><a href="<?= APP_ROOT ?>/reviews/Xbox">Xbox One</a></li>
+                <li><a href="<?= APP_ROOT ?>/reviews">Reviews</a></li>
                 <li><a href="<?= APP_ROOT ?>/news/">News</a></li>
             </ul>
             <?php
