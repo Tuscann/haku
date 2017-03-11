@@ -2,9 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f5c8238-e4ab-4cff-a41d-91e425bfdccc" name="Default" comment="">
+<<<<<<< .mine
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/ReviewsController.php" afterPath="$PROJECT_DIR$/controllers/ReviewsController.php" />
+
+
+
+
+
+
+
+
+=======
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/reviews/PC.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/reviews/PS4.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/reviews/Xbox.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/reviews/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Softuni Project.iml" afterPath="$PROJECT_DIR$/.idea/Softuni Project.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/css/style.css" afterPath="$PROJECT_DIR$/content/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/HomeController.php" afterPath="$PROJECT_DIR$/controllers/HomeController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/ReviewsController.php" afterPath="$PROJECT_DIR$/controllers/ReviewsController.php" />
+>>>>>>> .theirs
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/HomeModel.php" afterPath="$PROJECT_DIR$/models/HomeModel.php" />
+<<<<<<< .mine
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/home/index.php" afterPath="$PROJECT_DIR$/views/home/index.php" />
+
+
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/ReviewsModel.php" afterPath="$PROJECT_DIR$/models/ReviewsModel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/_layout/navbar.php" afterPath="$PROJECT_DIR$/views/_layout/navbar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/home/view.php" afterPath="$PROJECT_DIR$/views/home/view.php" />
+>>>>>>> .theirs
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/reviews/post.php" afterPath="$PROJECT_DIR$/views/reviews/post.php" />
     </list>
     <ignored path="haku.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,26 +96,48 @@
           </provider>
         </entry>
       </file>
+<<<<<<< .mine
       <file leaf-file-name="ReviewsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/ReviewsController.php">
+=======
+      <file leaf-file-name="ReviewsController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/controllers/ReviewsController.php">
+>>>>>>> .theirs
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
             <state relative-caret-position="51">
               <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+=======
+            <state relative-caret-position="51">
+              <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+>>>>>>> .theirs
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< .mine
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/home/index.php">
+=======
+      <file leaf-file-name="post.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/reviews/post.php">
+>>>>>>> .theirs
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
             <state relative-caret-position="189">
               <caret line="17" column="63" selection-start-line="17" selection-start-column="63" selection-end-line="17" selection-end-column="63" />
               <folding />
+=======
+            <state relative-caret-position="51">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+>>>>>>> .theirs
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< .mine
       <file leaf-file-name="post.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/reviews/post.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -99,7 +150,22 @@
       </file>
       <file leaf-file-name="HomeModel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/HomeModel.php">
+=======
+      <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/HomeController.php">
+
+
+
+
+
+
+
+
+
+
+>>>>>>> .theirs
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
             <state relative-caret-position="512">
               <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
               <folding>
@@ -111,15 +177,38 @@
                 <marker date="1489244221418" expanded="true" signature="1618:1737" ph="INSERT INTO `comments`... " />
                 <marker date="1489244221418" expanded="true" signature="2157:2203" ph="SELECT * FRO... users" />
               </folding>
+=======
+            <state relative-caret-position="204">
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding />
+
+
+
+
+
+
+
+
+>>>>>>> .theirs
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< .mine
       <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/HomeController.php">
+=======
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/reviews/index.php">
+>>>>>>> .theirs
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
             <state relative-caret-position="204">
               <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+=======
+            <state relative-caret-position="374">
+              <caret line="22" column="69" selection-start-line="22" selection-start-column="69" selection-end-line="22" selection-end-column="69" />
+>>>>>>> .theirs
               <folding />
             </state>
           </provider>
@@ -174,6 +263,28 @@
         <option value="$PROJECT_DIR$/content/css/navbar.css" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/bb1f1ccd-4a11-48cb-a33d-63553033243a/console.sql" />
         <option value="$PROJECT_DIR$/content/css/view.css" />
+<<<<<<< .mine
+
+
+
+
+
+
+
+
+
+=======
+        <option value="$PROJECT_DIR$/controllers/BaseController.php" />
+        <option value="$PROJECT_DIR$/controllers/UsersController.php" />
+        <option value="$PROJECT_DIR$/views/reviews/post.php" />
+        <option value="$PROJECT_DIR$/controllers/HomeController.php" />
+        <option value="$PROJECT_DIR$/models/HomeModel.php" />
+        <option value="$PROJECT_DIR$/content/css/style.css" />
+        <option value="$PROJECT_DIR$/fetch_pages.php" />
+        <option value="$PROJECT_DIR$/content/js/functions.js" />
+        <option value="$PROJECT_DIR$/views/home/view.php" />
+>>>>>>> .theirs
+<<<<<<< .mine
         <option value="$PROJECT_DIR$/controllers/BaseController.php" />
         <option value="$PROJECT_DIR$/controllers/UsersController.php" />
         <option value="$PROJECT_DIR$/views/reviews/post.php" />
@@ -185,10 +296,29 @@
         <option value="$PROJECT_DIR$/models/ReviewsModel.php" />
         <option value="$PROJECT_DIR$/views/reviews/view.php" />
         <option value="$PROJECT_DIR$/views/reviews/index.php" />
+=======
+        <option value="$PROJECT_DIR$/models/ReviewsModel.php" />
+        <option value="$PROJECT_DIR$/views/reviews/view.php" />
+        <option value="$PROJECT_DIR$/views/reviews/index.php" />
+
+
+
+
+
+
+
+
+>>>>>>> .theirs
         <option value="$PROJECT_DIR$/views/_layout/navbar.php" />
+<<<<<<< .mine
         <option value="$PROJECT_DIR$/controllers/ReviewsController.php" />
         <option value="$PROJECT_DIR$/models/HomeModel.php" />
         <option value="$PROJECT_DIR$/views/home/index.php" />
+=======
+        <option value="$PROJECT_DIR$/controllers/ReviewsController.php" />
+
+
+>>>>>>> .theirs
       </list>
     </option>
   </component>
@@ -454,7 +584,11 @@
       <workItem from="1489150369507" duration="20000" />
       <workItem from="1489150569542" duration="13709000" />
       <workItem from="1489222026517" duration="8654000" />
+<<<<<<< .mine
       <workItem from="1489231180820" duration="8317000" />
+=======
+      <workItem from="1489231180820" duration="7644000" />
+>>>>>>> .theirs
     </task>
     <task id="LOCAL-00001" summary="fixed images loading">
       <created>1488961895683</created>
@@ -488,10 +622,18 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< .mine
     <option name="totallyTimeSpent" value="72472000" />
+=======
+    <option name="totallyTimeSpent" value="71799000" />
+>>>>>>> .theirs
   </component>
   <component name="ToolWindowManager">
+<<<<<<< .mine
     <frame x="-8" y="0" width="1378" height="744" extended-state="1" />
+=======
+    <frame x="-8" y="0" width="1378" height="744" extended-state="0" />
+>>>>>>> .theirs
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18869309" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -688,6 +830,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/NewsController.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="34">
+          <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=======
         <state relative-caret-position="34">
           <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
           <folding />
@@ -718,36 +892,164 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="22" column="57" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
+>>>>>>> .theirs
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/models/UsersModel.php">
+=======
     <entry file="file://$PROJECT_DIR$/controllers/UsersController.php">
+>>>>>>> .theirs
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="272">
+          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+          <folding />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=======
         <state relative-caret-position="36">
           <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/content/css/style.css">
+    <entry file="file://$PROJECT_DIR$/models/HomeModel.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding>
+            <marker date="1489237734635" expanded="true" signature="162:210" ph="SELECT * FRO... reviews" />
+            <marker date="1489237734635" expanded="true" signature="397:418" ph="SELECT * FRO... reviews" />
+            <marker date="1489237734635" expanded="true" signature="615:661" ph="SELECT * FRO... reviews" />
+            <marker date="1489237734635" expanded="true" signature="867:935" ph="..." />
+            <marker date="1489237734635" expanded="true" signature="1229:1273" ph="SELECT * FRO... images" />
+            <marker date="1489237734635" expanded="true" signature="1409:2066" ph="{...}" />
+            <marker date="1489237734635" expanded="true" signature="1618:1737" ph="INSERT INTO `comments`... " />
+            <marker date="1489237734635" expanded="true" signature="2157:2203" ph="SELECT * FRO... users" />
+            <marker date="1489237734635" expanded="true" signature="2318:2414" ph="{...}" />
+          </folding>
+>>>>>>> .theirs
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/content/images/pic1.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/users/index.php">
+=======
+    <entry file="file://$PROJECT_DIR$/content/css/style.css">
+
+
+
+
+
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/BaseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="22" column="57" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
+=======
         <state relative-caret-position="546">
           <caret line="208" column="1" selection-start-line="208" selection-start-column="1" selection-end-line="208" selection-end-column="1" />
+
+
+
+
+
+
+
+>>>>>>> .theirs
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/controllers/UsersController.php">
+=======
     <entry file="file://$PROJECT_DIR$/fetch_pages.php">
+>>>>>>> .theirs
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="36">
+          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+=======
         <state relative-caret-position="221">
           <caret line="13" column="60" selection-start-line="13" selection-start-column="60" selection-end-line="13" selection-end-column="60" />
+>>>>>>> .theirs
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/content/css/style.css">
+=======
     <entry file="file://$PROJECT_DIR$/content/js/functions.js">
+>>>>>>> .theirs
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="546">
+          <caret line="208" column="1" selection-start-line="208" selection-start-column="1" selection-end-line="208" selection-end-column="1" />
+=======
+        <state relative-caret-position="442">
+          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+>>>>>>> .theirs
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/fetch_pages.php">
+=======
+    <entry file="file://$PROJECT_DIR$/views/home/view.php">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
+        <state relative-caret-position="221">
+          <caret line="13" column="60" selection-start-line="13" selection-start-column="60" selection-end-line="13" selection-end-column="60" />
+=======
+        <state relative-caret-position="-1020">
+          <caret line="0" column="18" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+>>>>>>> .theirs
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< .mine
+    <entry file="file://$PROJECT_DIR$/content/js/functions.js">
+=======
+    <entry file="file://$PROJECT_DIR$/views/home/index.php">
+>>>>>>> .theirs
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
         <state relative-caret-position="442">
           <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
           <folding />
@@ -758,6 +1060,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="393">
           <caret line="27" column="107" selection-start-line="27" selection-start-column="104" selection-end-line="27" selection-end-column="107" />
+=======
+        <state relative-caret-position="153">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/ReviewsModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="27" column="107" selection-start-line="27" selection-start-column="104" selection-end-line="27" selection-end-column="107" />
+>>>>>>> .theirs
           <folding>
             <marker date="1489239568755" expanded="true" signature="305:319" ph="SELECT * FRO... images" />
             <marker date="1489239568755" expanded="true" signature="305:342" ph="SELECT * FRO... games" />
@@ -785,6 +1099,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/reviews/Xbox.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
@@ -812,17 +1127,56 @@
             <marker date="1489244221418" expanded="true" signature="1618:1737" ph="INSERT INTO `comments`... " />
             <marker date="1489244221418" expanded="true" signature="2157:2203" ph="SELECT * FRO... users" />
           </folding>
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> .theirs
         </state>
       </provider>
     </entry>
+<<<<<<< .mine
     <entry file="file://$PROJECT_DIR$/views/_layout/navbar.php">
+=======
+    <entry file="file://$PROJECT_DIR$/views/reviews/view.php">
+>>>>>>> .theirs
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
         <state relative-caret-position="255">
           <caret line="15" column="56" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
+=======
+        <state relative-caret-position="34">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+>>>>>>> .theirs
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< .mine
     <entry file="file://$PROJECT_DIR$/views/reviews/post.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -839,6 +1193,24 @@
         </state>
       </provider>
     </entry>
+=======
+    <entry file="file://$PROJECT_DIR$/views/reviews/post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+
+
+
+
+
+
+
+
+>>>>>>> .theirs
     <entry file="file://$PROJECT_DIR$/controllers/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -847,26 +1219,54 @@
         </state>
       </provider>
     </entry>
+<<<<<<< .mine
     <entry file="file://$PROJECT_DIR$/views/home/view.php">
+=======
+    <entry file="file://$PROJECT_DIR$/views/reviews/index.php">
+>>>>>>> .theirs
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
         <state relative-caret-position="-451">
           <caret line="102" column="93" selection-start-line="102" selection-start-column="92" selection-end-line="102" selection-end-column="93" />
           <folding />
+=======
+        <state relative-caret-position="374">
+          <caret line="22" column="69" selection-start-line="22" selection-start-column="69" selection-end-line="22" selection-end-column="69" />
+          <folding />
+>>>>>>> .theirs
         </state>
       </provider>
     </entry>
+<<<<<<< .mine
     <entry file="file://$PROJECT_DIR$/controllers/ReviewsController.php">
+=======
+    <entry file="file://$PROJECT_DIR$/views/_layout/navbar.php">
+>>>>>>> .theirs
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
         <state relative-caret-position="51">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+=======
+        <state relative-caret-position="255">
+          <caret line="15" column="56" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
+>>>>>>> .theirs
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< .mine
     <entry file="file://$PROJECT_DIR$/views/home/index.php">
+=======
+    <entry file="file://$PROJECT_DIR$/controllers/ReviewsController.php">
+>>>>>>> .theirs
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< .mine
         <state relative-caret-position="189">
           <caret line="17" column="63" selection-start-line="17" selection-start-column="63" selection-end-line="17" selection-end-column="63" />
+=======
+        <state relative-caret-position="51">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+>>>>>>> .theirs
           <folding />
         </state>
       </provider>
