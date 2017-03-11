@@ -1,6 +1,12 @@
 html{
     padding: 1.5%;
 }
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 30px;
+    font-size: 14px;
+}
+
 /* Slideshow */
 
 /* jssor slider bullet navigator skin 05 css */
@@ -20,7 +26,7 @@ html{
     /* size of bullet elment */
     width: 16px;
     height: 16px;
-    background: url('/content/images/b05.png') no-repeat;
+    background: url('/content/images/images/b05.png') no-repeat;
     overflow: hidden;
     cursor: pointer;
 }
@@ -83,52 +89,106 @@ html{
 .jssora22r.jssora22rdn {
     background-position: -310px -31px;
 }
-
+/*Section*/
 #one {
-    max-height: 850px;
+    max-height: 500%;
     min-width: 200px;
     text-align: left;
     border: 2px solid;
     border-color: #EEEEEE;
-
-    
 }
 
 #two {
-    position: relative;
-    top: 20px;
-    min-height: 400px;
+    margin-top: 20px;
+    min-height: 1050px;
     min-width: 200px;
-    text-align: left;
     border: 2px solid;
     border-color: #EEEEEE;
-
-}
-.button{
-    background-color: #e5e5e5;
-    font-size: 15px;
-}
-.text-primary-media{
-    text-align: center;
-    color: #337ab7;
 }
 
 #three {
-    position: relative;
-    top: 10px;
+
+    margin-top: 20px;
     min-height: 400px;
     min-width: 200px;
-    text-align: left;
     border: 2px solid;
     border-color: #EEEEEE;
-    /*background: url('<?=APP_ROOT?>/content/images/a22.png') center center no-repeat;*/
 }
 
-.comment-form {
-    margin-top: 25px;
-    /*border: 2px solid #EEEEEE;*/
+
+/*=====================================
+  TAG LINE STYLES
+    ===================================*/
+
+.tag-line {
+    background: #E9E9E9;
+    color: #000;
 }
 
-#login-message {
-    margin-top: 35px;
+.tag-line h2 {
+    font-size: 20px;
+    font-weight: 900;
+    padding: 5px 10px 10px 5px;
+    color: #005E5A;
 }
+
+.tag-line h2 > i {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+
+h1::after {
+    content: " ";
+    border: solid 2px #2f9484;
+    display: block;
+    width: 200px;
+    margin: 12px auto;
+}
+
+/*=====================================
+  ABOUT STYLES
+  ===================================*/
+.about-div {
+    padding: 30px;
+}
+
+.icon-round-border {
+    border: 10px double #1A94C4;
+    color: #2f9484;
+    text-align: center;
+    padding-top: 15px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.icon-round-border:hover {
+    color: #fff;
+    border: 10px double #fff;
+    background-color: #1A94C4;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.about-div hr {
+    border: 1px solid #1A94C4;
+}
+
+.about-div h3 {
+    font-size: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.about-div p {
+    padding-top: 10px;
+}
+ я само смали да вивдим

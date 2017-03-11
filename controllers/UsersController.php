@@ -54,6 +54,7 @@ class UsersController extends BaseController
                         $_SESSION['loggedIn'] = true;
                         $_SESSION['username'] = $username;
                         $_SESSION['userId'] = $userId;
+                        $_SESSION['profile-pic'] = NULL;
                         $_SESSION['message'] = 'You are successfully registered!';
 
                         header('Location: ' . APP_ROOT);
