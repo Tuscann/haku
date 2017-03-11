@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6f5c8238-e4ab-4cff-a41d-91e425bfdccc" name="Default" comment="" />
     <ignored path="haku.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -375,7 +374,7 @@
       <workItem from="1489068469636" duration="5958000" />
       <workItem from="1489150369507" duration="20000" />
       <workItem from="1489150569542" duration="10089000" />
-      <workItem from="1489162557575" duration="15524000" />
+      <workItem from="1489162557575" duration="14926000" />
     </task>
     <task id="LOCAL-00001" summary="fixed images loading">
       <created>1488961895683</created>
@@ -402,7 +401,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67405000" />
+    <option name="totallyTimeSpent" value="66807000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1378" height="744" extended-state="0" />
