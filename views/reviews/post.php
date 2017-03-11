@@ -1,4 +1,7 @@
+
+
 <div class="container">
+
     <form>
         <div class="form-group">
             <label for="exampleSelect1">Select category</label>
@@ -6,6 +9,14 @@
                 <option>PC</option>
                 <option>PS4</option>
                 <option>Xbox One</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exampleSelect1">Select game</label>
+            <select class="form-control" id="exampleSelect1">
+                <?php foreach ($this->games as $game) : ?>
+                    <option value="<?=$game['name']?>"><?=$game['name']?></option>
+                <?php endforeach;?>
             </select>
         </div>
         <div class="form-group">
@@ -17,11 +28,11 @@
             <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
         </div>
         <div class="form-group">
-            <label for="exampleInputFile">File input</label>
-            <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+            <label for="exampleInputFile">Review picture upload</label>
+            <input type="file" class="form-control-file" id="fileToUpload" name="fileToUpload" aria-describedby="fileHelp">
             <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" name="submit-review" class="btn btn-primary">Submit</button>
     </form>
 </div>

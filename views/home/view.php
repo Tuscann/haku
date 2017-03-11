@@ -157,7 +157,7 @@
                             <img class="comment-pic" src="<?= $imagePath ?>"/>
                             <strong>
                                 <a target="_blank"
-                                   href="<?= APP_ROOT ?>/users/profile/<?= $comment['username'] ?>"><?= $comment['username'] ?></a>
+                                   href="<?= APP_ROOT ?>/users/profile/<?= $comment['username']?>"><?= $comment['username'] ?></a>
                             </strong> - <?= (new DateTime($comment['date']))->format('d-M-Y H:i') ?></p>
                         <p class="comment-content"><?= htmlspecialchars($comment['content']) ?></p>
                         <hr>

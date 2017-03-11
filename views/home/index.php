@@ -15,7 +15,7 @@
         <?php foreach ($this->reviews as $review) : ?>
             <div class="col-md-4 review">
                 <img class="review-pic" src="<?=APP_ROOT.$review['picture']?>">
-                <span class="notify-badge">PC</span>
+                <span class="notify-badge"><?=$review['category']?></span>
                 <div class="review-content">
                     <div class="review-info">
                         <h3><a class="title" href="<?=APP_ROOT?>/home/view/<?=$review['id']?>"><?=htmlentities($review['title'])?></a></h3>
