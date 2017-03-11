@@ -43,7 +43,7 @@
                                     <strong>
                                         <?php echo $_SESSION['username'] ?>
                                     </strong>
-                                     <img class="navbar-pic" src="<?= APP_ROOT ?>/content/images/profile-pics/anton.jpg"
+                                     <img class="navbar-pic" src="<?= APP_ROOT ?>/content/images/profile-pics/default.png"
                                           alt="">
                                 </span>
                                     <span class="caret"></span>
