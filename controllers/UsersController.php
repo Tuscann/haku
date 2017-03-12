@@ -55,7 +55,7 @@ class UsersController extends BaseController
                         $_SESSION['loggedIn'] = true;
                         $_SESSION['username'] = $username;
                         $_SESSION['userId'] = $userId[0];
-                        $_SESSION['profile-pic'] = NULL;
+                        //$_SESSION['profile-pic'] = NULL;
                         $_SESSION['message'] = 'You are successfully registered!';
 
                         header('Location: ' . APP_ROOT);
@@ -116,7 +116,7 @@ class UsersController extends BaseController
             $username = $_POST['username'];
             $password = $_POST['password'];
             $confirm_password= $_POST['confirm_password'];
-            $profile_pic_path = FILE_PATH .$_FILES['profile_pic']['name'];
+            $profile_pic_path = FILE_PATH . $username . ".png";
 
             if (!preg_match("/^[a-zA-Z0-9_-]{5,}$/", $username)) {
                 $this->setValidationError("username", "Username must contain only alphabets and space");
@@ -136,27 +136,33 @@ class UsersController extends BaseController
                 $this->setValidationError("confirm-password", "Password and Confirm Password doesn't match");
             }
 
-            // if has set profile pic check for allowed format and copy picture
-            if ($_FILES['profile_pic']['name']) {
-
-                if (!preg_match("!image!", $_FILES['profile_pic']['type'])) {
-                    $this->setValidationError('file', "Please only upload GIF, JPG and PNG");
-                }
-
-                //copy image to content/image/profile-pics
-                if (copy($_FILES['profile_pic']['tmp_name'], $profile_pic_path)) {
-
-
-
-                } else {
-                    $this->setValidationError('file', "File upload failed.");
-                }
-            } else { // if not set profile pic update with
-                $profile_pic_path = $this->user['profile_pic'];
-            }
 
             $password_hash = password_hash($password, PASSWORD_BCRYPT);
             if ($this->formValid()) {
+
+                // if has set profile pic check for allowed format and copy picture
+                if ($_FILES['profile_pic']['name']) {
+
+                    if (!preg_match("!image!", $_FILES['profile_pic']['type'])) {
+                        $this->setValidationError('file', "Please only upload GIF, JPG and PNG");
+                    }
+
+                    if ($_FILES['profile_pic']['size'] > 300000) {
+                        var_dump($_FILES['profile_pic']['size']);
+                        $this->setValidationError('file', "Sorry, your file is too large. Allowed size: 3 MB.");
+                    }
+
+                    //copy image to content/image/profile-pics
+                    if (move_uploaded_file($_FILES['profile_pic']['tmp_name'], $profile_pic_path)) {
+
+                    } else {
+                        $this->setValidationError('file', "File upload failed.");
+                    }
+
+                } else { // if not set profile pic update with
+                    $profile_pic_path = $this->user['profile_pic'];
+                }
+
                 $isEdited = $this->model->editUser($userId, $username, $password_hash, $email, $first_name, $last_name, $profile_pic_path);
 
                 if ($isEdited) {
