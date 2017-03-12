@@ -1,4 +1,6 @@
 <?php
+require_once 'User.php';
+
 class UsersModel extends BaseModel
 {
     public function login(string $username)
@@ -6,7 +8,17 @@ class UsersModel extends BaseModel
         $statement = self::$db->prepare("SELECT * FROM users WHERE username='$username'");
         $statement->execute();
         $user = $statement->fetch();
-        return $user;        
+        $newUser = new
+        User(
+            $user['username'],
+            $user['email'], $user['id'],
+            $user['profile_pic'],
+            $user['first_name'],
+            $user['last_name'],
+            $user['password']
+        );
+        file_put_contents('user', serialize($newUser));
+        return $user;
     }
 
 

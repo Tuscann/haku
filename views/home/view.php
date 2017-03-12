@@ -109,8 +109,7 @@
             <div class="about-div">
                 <i class="fa fa-youtube fa-4x icon-round-border"></i>
                 <h3>Gameplay Trailer</h3>
-                <hr/>
-                <hr/>
+                <hr>
                 <p>
                     <iframe class="video" width="1080" height="445" src="https://www.youtube.com/embed/TZ_G6XiHoUA">
                     </iframe>
@@ -125,33 +124,13 @@
         <div class="about-div">
             <i class="fa fa-photo fa-4x icon-round-border"></i>
             <h3>Photos of the game</h3>
-            <hr/>
-            <hr/>
+            <hr>
+
             <div class="container">
-                <img src="<?= APP_ROOT ?>/content/images/1.jpg" hspace="20" vspace="20" width="250" height="142"
-                     alt="logo"/>
-                <img src="<?= APP_ROOT ?>/content/images/2.jpg" hspace="20" vspace="20" width="250" height="142"
-                     alt="logo"/>
-                <img src="<?= APP_ROOT ?>/content/images/3.png" hspace="20" vspace="20" width="250" height="142"
-                     alt="logo"/>
-                <img src="<?= APP_ROOT ?>/content/images/4.jpg" hspace="20" vspace="20" width="250" height="142"
-                     alt="logo"/>
-                <img src="<?= APP_ROOT ?>/content/images/5.jpg" hspace="20" vspace="20" width="250" height="142"
-                     alt="logo"/>
-                <img src="<?= APP_ROOT ?>/content/images/6.jpg" hspace="20" vspace="20" width="250" height="142"
-                     alt="logo"/>
-                <img src="<?= APP_ROOT ?>/content/images/7.jpg" hspace="20" vspace="20" width="250" height="142"
-                     alt="logo"/>
-                <img src="<?= APP_ROOT ?>/content/images/8.jpg" hspace="20" vspace="20" width="250" height="142"
-                     alt="logo"/>
-                <img src="<?= APP_ROOT ?>/content/images/9.jpg" hspace="20" vspace="20" width="250" height="142"
-                     alt="logo"/>
-                <img src="<?= APP_ROOT ?>/content/images/10.jpg" hspace="20" vspace="20" width="250" height="142"
-                     alt="logo"/>
-                <img src="<?= APP_ROOT ?>/content/images/11.jpg" hspace="20" vspace="20" width="250" height="142"
-                     alt="logo"/>
-                <img src="<?= APP_ROOT ?>/content/images/12.jpeg" hspace="20" vspace="20" width="250" height="142"
-                     alt="logo"/>
+                <?php for ($i = 0; $i < 12; $i++) : ?>
+                    <img src="<?= APP_ROOT ?>/content/images/<?=$i?>.jpg" hspace="20" vspace="20" width="250" height="142"
+                         alt="logo"/>
+                <?php endfor; ?>
             </div>
         </div>
     </div>

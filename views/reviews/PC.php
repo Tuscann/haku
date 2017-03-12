@@ -1,7 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Nikolai
- * Date: 11.3.2017 г.
- * Time: 15:51
- */
+require 'User.php';
+$user = unserialize(file_get_contents('user'));
+$userInfo = $user->getData();
+
+var_dump($userInfo);
+?>

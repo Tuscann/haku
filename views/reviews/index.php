@@ -1,4 +1,5 @@
 <?php
+
 $categories = ['PC', 'Xbox', 'PS4'];
 for ($i = 0; $i < count($categories); $i++) :?>
 <div class="container">
