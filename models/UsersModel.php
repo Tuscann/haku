@@ -50,15 +50,19 @@ class UsersModel extends BaseModel
         return false;
     }
 
-    public function getCurrentUserInfo($username) {
+    public function getUserByUsername($username) {
         $statement = self::$db->prepare("SELECT * FROM users WHERE username='$username'");
         $statement->execute();
-        return $user = $statement->fetch();
+        $user = $statement->fetch();
+
+        return $user;
     }
 
-    public function getUserById($id): array {
+    public function getUserById($id) :array {
         $statement = self::$db->prepare("SELECT * FROM users WHERE id='$id'");
         $statement->execute();
-        return $user = $statement->fetch();
+        $user = $statement->fetch();
+
+        return $user;
     }
 }

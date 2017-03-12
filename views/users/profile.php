@@ -1,12 +1,13 @@
 <div class="container">
     <h1 class="text-center">Edit Profile</h1>
     <hr>
+
     <div class="row">
         <!-- left column -->
         <form class="form-horizontal" method="post" role="form" enctype="multipart/form-data">
             <div class="col-md-3">
                 <div class="text-center">
-                    <img src="<?= APP_ROOT ."/". $this->user['profile_pic'] ?>" class="avatar img-circle profile-pic" alt="avatar">
+                    <img src="<?= $this->setImagePath($this->user['profile_pic']) ?>" class="avatar img-circle profile-pic" alt="avatar">
                     <h6>Upload a different photo...</h6>
 
                     <input type="file" name="profile_pic" />

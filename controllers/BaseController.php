@@ -60,8 +60,9 @@ abstract class BaseController
         $this->redirectToUrl($url);
     }
 
-    public function authorize() {
-        if (! $this->isLoggedIn) {
+    public function authorize()
+    {
+        if (!$this->isLoggedIn) {
             $this->addErrorMessage("Please login first.");
             $this->redirect("users", "login");
         }
@@ -91,9 +92,19 @@ abstract class BaseController
         $this->validationErrors[$fieldName] = $errorMsg;
     }
 
-    function formValid() : bool
+    function formValid(): bool
     {
         return count($this->validationErrors) == 0;
+    }
+
+    function setImagePath(string $path)
+    {
+        $imagePath = APP_ROOT;
+        if ($path) {
+            return $imagePath = $imagePath . '/' . $path;
+        }
+
+        return $imagePath = $imagePath . '/content/images/profile-pics/default.png';
     }
 
     public function renderView(string $viewName = null, bool $includeLayout = true)

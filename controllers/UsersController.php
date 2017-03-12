@@ -50,10 +50,11 @@ class UsersController extends BaseController
 
                 if ($this->formValid()) {
                     $userId = $this->model->register($username, $password_hash, $email);
+
                     if ($userId) {
                         $_SESSION['loggedIn'] = true;
                         $_SESSION['username'] = $username;
-                        $_SESSION['userId'] = $userId;
+                        $_SESSION['userId'] = $userId[0];
                         $_SESSION['profile-pic'] = NULL;
                         $_SESSION['message'] = 'You are successfully registered!';
 
@@ -105,6 +106,7 @@ class UsersController extends BaseController
     function profile($userId) {
         // load current user for view
         $user = $this->model->getUserById($userId);
+        $this->model->getUserByUsername($_SESSION['username']);
         $this->user = $user;
 
         if ($this->isPost) {
@@ -154,17 +156,19 @@ class UsersController extends BaseController
             }
 
             $password_hash = password_hash($password, PASSWORD_BCRYPT);
+            if ($this->formValid()) {
+                $isEdited = $this->model->editUser($userId, $username, $password_hash, $email, $first_name, $last_name, $profile_pic_path);
 
-
-            $isEdited = $this->model->editUser($userId, $username, $password_hash, $email, $first_name, $last_name, $profile_pic_path);
-            if ($isEdited) {
-                $_SESSION['username'] = $username;
-                $_SESSION['profile-pic'] = $profile_pic_path;
-                header('Location: ' . APP_ROOT ."/users/profile/" . $userId);
+                if ($isEdited) {
+                    $_SESSION['username'] = $username;
+                    $_SESSION['profile-pic'] = $profile_pic_path;
+                    $this->addInfoMessage('Success edit');
+                    header('Location: ' . APP_ROOT ."/users/profile/" . $userId);
+                } else {
+                    $this->addErrorMessage('Edit failed');
+                }
 
             }
-
-
         }
     }
 

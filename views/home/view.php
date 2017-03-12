@@ -235,15 +235,7 @@ if (isset($_SESSION['loggedIn'])) { ?>
                 <?php foreach ($this->comments as $comment) : ?>
                     <div class="comment-container">
                         <p>
-                            <?php
-                            $imagePath = APP_ROOT;
-                            if ($comment['profile_pic']) {
-                                $imagePath = $imagePath . $comment['profile_pic'];
-                            } else {
-                                $imagePath = $imagePath . '/content/images/profile-pics/default.png';
-                            }
-                            ?>
-                            <img class="comment-pic" src="<?= $imagePath ?>"/>
+                            <img class="comment-pic" src="<?= $this->setImagePath($comment['profile_pic']) ?>"/>
                             <strong>
                                 <a target="_blank"
                                    href="<?= APP_ROOT ?>/users/profile/<?= $comment['username'] ?>"><?= $comment['username'] ?></a>

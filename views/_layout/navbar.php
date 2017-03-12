@@ -43,15 +43,7 @@
                                     <strong>
                                         <?php echo $_SESSION['username'] ?>
                                     </strong>
-                                    <?php
-                                    $imagePath = APP_ROOT;
-                                    if ($_SESSION['profile-pic'] != NULL) {
-                                        $imagePath = $imagePath .'/' . $_SESSION['profile-pic'];
-                                    } else {
-                                        $imagePath = $imagePath . '/content/images/profile-pics/default.png';
-                                    }
-                                    ?>
-                                     <img class="navbar-pic" src="<?= $imagePath ?>"
+                                     <img class="navbar-pic" src="<?= $this->setImagePath($_SESSION['profile-pic']); ?>"
                                           alt="">
                                 </span>
                                     <span class="caret"></span>
