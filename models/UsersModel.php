@@ -17,7 +17,7 @@ class UsersModel extends BaseModel
             $user['last_name'],
             $user['password']
         );
-        file_put_contents('user', serialize($newUser));
+        $_SESSION['user'] = serialize($newUser);
         return $user;
     }
 

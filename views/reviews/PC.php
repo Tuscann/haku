@@ -1,7 +1,6 @@
 <?php
 require 'User.php';
-$user = unserialize(file_get_contents('user'));
+$user = unserialize($_SESSION['user']);
 $userInfo = $user->getData();
-
 var_dump($userInfo);
 ?>
