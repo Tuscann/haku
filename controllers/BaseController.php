@@ -97,7 +97,7 @@ abstract class BaseController
         return count($this->validationErrors) == 0;
     }
 
-    function setImagePath(string $path)
+    function setImagePath($path)
     {
         $imagePath = APP_ROOT;
         if ($path) {
