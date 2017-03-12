@@ -22,7 +22,44 @@ class User
         $this->password = $password;
     }
 
-    public function getData() {
+    public function getUserName()
+    {
+        return $this->username;
+    }
+
+    public function getEmail()
+    {
+        return $this->email;
+
+    }
+
+    public function getUserId()
+    {
+        return $this->id;
+    }
+
+    public function getUserPicture()
+    {
+        return $this->picture;
+    }
+
+    public function getUserFirstName()
+    {
+        return $this->firstName;
+    }
+
+    public function getUserLastName()
+    {
+        return $this->lastName;
+    }
+
+    public function userPassword()
+    {
+        return $this->password;
+    }
+
+    public function getData()
+    {
         return $this->data = [
             'name' => $this->username,
             'email' => $this->email,
