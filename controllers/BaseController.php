@@ -41,6 +41,32 @@ abstract class BaseController
         // Implement the default action in the subclasses
     }
 
+    public function redirectToUrl(string $url)
+    {
+        header("Location: " . $url);
+        die;
+    }
+
+    public function redirect(string $controllerName, string $actionName = null, array $params = null)
+    {
+        $url = APP_ROOT . '/' . urlencode($controllerName);
+        if ($actionName != null) {
+            $url .= '/' . urlencode($actionName);
+        }
+        if ($params != null) {
+            $encodedParams = array_map($params, 'urlencode');
+            $url .= implode('/', $encodedParams);
+        }
+        $this->redirectToUrl($url);
+    }
+
+    public function authorize() {
+        if (! $this->isLoggedIn) {
+            $this->addErrorMessage("Please login first.");
+            $this->redirect("users", "login");
+        }
+    }
+
     function addMessage(string $msg, string $type)
     {
         if (!isset($_SESSION['messages'])) {

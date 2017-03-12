@@ -102,9 +102,70 @@ class UsersController extends BaseController
         $this->addInfoMessage("Log out successful.");
     }
 
-    function profile($name) {
-        $user = $this->model->getCurrentUserInfo($name);
+    function profile($userId) {
+        // load current user for view
+        $user = $this->model->getUserById($userId);
         $this->user = $user;
+
+        if ($this->isPost) {
+            $first_name = $_POST['first_name'];
+            $last_name = $_POST['last_name'];
+            $email = $_POST['email'];
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+            $confirm_password= $_POST['confirm_password'];
+            $profile_pic_path = FILE_PATH .$_FILES['profile_pic']['name'];
+
+            if (!preg_match("/^[a-zA-Z0-9_-]{5,}$/", $username)) {
+                $this->setValidationError("username", "Username must contain only alphabets and space");
+            }
+            // checking for valid email
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $this->setValidationError("email", "Please enter a valid email address");
+            }
+
+            // password can contain at least 6 characters
+            if (strlen($password) < 6) {
+                $this->setValidationError("password", "Password must be minimum of 6 characters");
+            }
+
+            // check whether password matches with confirm password
+            if ($password != $confirm_password) {
+                $this->setValidationError("confirm-password", "Password and Confirm Password doesn't match");
+            }
+
+            // if has set profile pic check for allowed format and copy picture
+            if ($_FILES['profile_pic']['name']) {
+
+                if (!preg_match("!image!", $_FILES['profile_pic']['type'])) {
+                    $this->setValidationError('file', "Please only upload GIF, JPG and PNG");
+                }
+
+                //copy image to content/image/profile-pics
+                if (copy($_FILES['profile_pic']['tmp_name'], $profile_pic_path)) {
+
+
+
+                } else {
+                    $this->setValidationError('file', "File upload failed.");
+                }
+            } else { // if not set profile pic update with
+                $profile_pic_path = $this->user['profile_pic'];
+            }
+
+            $password_hash = password_hash($password, PASSWORD_BCRYPT);
+
+
+            $isEdited = $this->model->editUser($userId, $username, $password_hash, $email, $first_name, $last_name, $profile_pic_path);
+            if ($isEdited) {
+                $_SESSION['username'] = $username;
+                $_SESSION['profile-pic'] = $profile_pic_path;
+                header('Location: ' . APP_ROOT ."/users/profile/" . $userId);
+
+            }
+
+
+        }
     }
 
 }

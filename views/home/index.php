@@ -9,7 +9,7 @@
 
 <div class="container">
     <!-- Example row of columns -->
-    <h2>Latest reviews</h2>
+    <h1 class="text-center">Latest reviews</h1>
     <hr>
     <div class="reviews-row">
         <?php foreach ($this->reviews as $review) : ?>
@@ -29,6 +29,6 @@
     <div class="text-center more-reviews">
         <a class="btn btn-primary" href="#" role="button">Show more</a>
     </div>
-    <h2>Latest news</h2>
+    <h1 class="text-center">Latest news</h1>
     <hr>
 </div>

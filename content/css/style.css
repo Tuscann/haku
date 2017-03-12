@@ -2,16 +2,10 @@
 
 @font-face {
     font-family: 'Raleway-ExtraBold';
-    src: url('../fonts/Raleway/Raleway-Bold.ttf')  format('truetype');
+    src: url('../fonts/Raleway/Raleway-Bold.ttf') format('truetype');
 }
 
-@font-face {
-    font-family: GAME;
-    src: url('../fonts/GAME.eot') format('eot');
-}
-
-html *
-{
+html * {
     font-family: 'Raleway', sans-serif;
 }
 
@@ -46,6 +40,11 @@ html *
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
+#login-message {
+    margin-top: 35px;
+}
+
 .span-or {
     display: block;
     position: absolute;
@@ -56,6 +55,7 @@ html *
     width: 50px;
     text-align: center;
 }
+
 .hr-or {
     background-color: #cdcdcd;
     height: 1px;
@@ -80,19 +80,20 @@ html *
 }
 
 .review-pic {
-    position:relative;
-    display:inline-block;
+    position: relative;
+    display: inline-block;
 }
-.notify-badge{
+
+.notify-badge {
     position: absolute;
-    right:26px;
-    top:10px;
-    background:#2776DC;
+    right: 26px;
+    top: 10px;
+    background: #2776DC;
     text-align: center;
     border-radius: 12px 12px 12px 12px;
-    color:white;
-    padding:5px 10px;
-    font-size:13px;
+    color: white;
+    padding: 5px 10px;
+    font-size: 13px;
 }
 
 .review-pic {
@@ -112,6 +113,7 @@ html *
 .comment-pic {
     border-radius: 50%;
     height: 40px;
+    width: 40px;
     margin-right: 10px;
 }
 
@@ -131,29 +133,31 @@ html *
     margin: 10px;
 }
 
-
 .submit-comment-div {
 
 }
 
 .profile-pic {
     border-radius: 50%;
-    height: 200px;
+    height: 100px;
+    width: 100px;
     margin-top: 20px;
 }
 
 .navbar-pic {
     border-radius: 50%;
     height: 25px;
+    width: 25px;
 }
 
 .profile {
     display: block;
     align-content: center;
 }
+
 /* End login form styles */
 
-.contents{
+.contents {
     margin: 20px;
     padding: 20px;
     list-style: none;
@@ -161,10 +165,12 @@ html *
     border: 1px solid #ddd;
     border-radius: 5px;
 }
-.contents li{
+
+.contents li {
     margin-bottom: 10px;
 }
-.loading-div{
+
+.loading-div {
     position: absolute;
     top: 0;
     left: 0;
@@ -172,16 +178,21 @@ html *
     height: 100%;
     background: rgba(0, 0, 0, 0.56);
     z-index: 999;
-    display:none;
+    display: none;
 }
+
 .loading-div img {
     margin-top: 20%;
     margin-left: 50%;
 }
 
 /* Pagination style */
-.pagination{margin:0;padding:0;}
-.pagination li{
+.pagination {
+    margin: 0;
+    padding: 0;
+}
+
+.pagination li {
     display: inline;
     padding: 6px 10px 6px 10px;
     border: 1px solid #ddd;
@@ -190,20 +201,25 @@ html *
     background: #FFFFFF;
     box-shadow: inset 1px 1px 5px #F4F4F4;
 }
-.pagination li a{
-    text-decoration:none;
+
+.pagination li a {
+    text-decoration: none;
     color: rgb(89, 141, 235);
 }
+
 .pagination li.first {
     border-radius: 5px 0px 0px 5px;
 }
+
 .pagination li.last {
     border-radius: 0px 5px 5px 0px;
 }
-.pagination li:hover{
+
+.pagination li:hover {
     background: #CFF;
 }
-.pagination li.active{
+
+.pagination li.active {
     background: #F0F0F0;
     color: #333;
 }

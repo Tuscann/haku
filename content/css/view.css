@@ -1,11 +1,6 @@
 html{
     padding: 1.5%;
 }
-body {
-    font-family: 'Open Sans', sans-serif;
-    line-height: 30px;
-    font-size: 14px;
-}
 
 /* Slideshow */
 
@@ -26,7 +21,7 @@ body {
     /* size of bullet elment */
     width: 16px;
     height: 16px;
-    background: url('/content/images/images/b05.png') no-repeat;
+    background: url('/content/images/b05.png') no-repeat;
     overflow: hidden;
     cursor: pointer;
 }
@@ -96,6 +91,8 @@ body {
     text-align: left;
     border: 2px solid;
     border-color: #EEEEEE;
+
+    
 }
 
 #two {
@@ -113,6 +110,7 @@ body {
     min-width: 200px;
     border: 2px solid;
     border-color: #EEEEEE;
+    /*background: url('<?=APP_ROOT?>/content/images/a22.png') center center no-repeat;*/
 }
 
 
@@ -191,4 +189,3 @@ h1::after {
 .about-div p {
     padding-top: 10px;
 }
- я само смали да вивдим

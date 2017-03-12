@@ -46,7 +46,7 @@
                                     <?php
                                     $imagePath = APP_ROOT;
                                     if ($_SESSION['profile-pic'] != NULL) {
-                                        $imagePath = $imagePath . $_SESSION['profile-pic'];
+                                        $imagePath = $imagePath .'/' . $_SESSION['profile-pic'];
                                     } else {
                                         $imagePath = $imagePath . '/content/images/profile-pics/default.png';
                                     }
@@ -57,7 +57,7 @@
                                     <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a href="<?= APP_ROOT ?>/users/profile/<?= $_SESSION['username'] ?>">Profile</a>
+                                <li><a href="<?= APP_ROOT ?>/users/profile/<?= $_SESSION['userId'] ?>">Profile</a>
                                 </li>
                                 <li><a href="<?= APP_ROOT ?>/users/logout">Log out</a></li>
                             </ul>

@@ -1,6 +1,7 @@
 <?php
 
 define ('APP_ROOT', "/haku");
+define ('FILE_PATH', "content/images/profile-pics/");
 
 define('DEFAULT_CONTROLLER', 'home');
 define('DEFAULT_ACTION', 'index');

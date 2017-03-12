@@ -35,6 +35,7 @@ class HomeController extends BaseController
 
         // get all reviews images
         $images = $this->model->getReviewImages($reviewId);
+
         $this->reviewImages = $images;
         if (!$review) {
             $this->addErrorMessage("This review doesn't exist.");
