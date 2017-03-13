@@ -5,13 +5,18 @@ class UsersModel extends BaseModel
 {
     public function login(string $username)
     {
-        $statement = self::$db->prepare("SELECT * FROM users WHERE username='$username'");
-        $statement->execute();
+        $statement = self::$db->prepare("SELECT * FROM users WHERE username=?");
+        $statement->execute(
+            [
+                $username
+            ]
+        );
         $user = $statement->fetch();
         $newUser = new
         User(
             $user['username'],
-            $user['email'], $user['id'],
+            $user['email'],
+            $user['id'],
             $user['profile_pic'],
             $user['first_name'],
             $user['last_name'],
@@ -36,16 +41,35 @@ class UsersModel extends BaseModel
                               string $first_name, string $last_name, string $profile_pic)
     {
         $statement = self::$db->prepare("UPDATE users 
-                                        SET username='$username', password='$password_hash', email='$email',
-                                            first_name='$first_name', last_name='$last_name', profile_pic='$profile_pic'
-                                            WHERE id='$userId'");
-        return $statement->execute();
+                                        SET
+                                        username=?, 
+                                        password=?, 
+                                        email=?,
+                                        first_name=?,
+                                        last_name=?,
+                                        profile_pic=?
+                                            WHERE id=?");
+        return $statement->execute(
+            [
+                $username,
+                $password_hash,
+                $email,
+                $first_name,
+                $last_name,
+                $profile_pic,
+                $userId
+            ]
+        );
     }
 
     function isUserExistsByEmail(string $email): bool
     {
-        $query = self::$db->prepare("SELECT * FROM users WHERE email='$email'");
-        $query->execute();
+        $query = self::$db->prepare("SELECT * FROM users WHERE email=?");
+        $query->execute(
+            [
+                $email
+            ]
+        );
         if ($query->rowCount() > 0){
             return true;
         }
@@ -54,8 +78,12 @@ class UsersModel extends BaseModel
 
     function isUserExistsByUsername(string $username): bool
     {
-        $query = self::$db->prepare("SELECT * FROM users WHERE username='$username'");
-        $query->execute();
+        $query = self::$db->prepare("SELECT * FROM users WHERE username=?");
+        $query->execute(
+            [
+                $username
+            ]
+        );
         if ($query->rowCount() > 0){
             return true;
         }
@@ -63,16 +91,24 @@ class UsersModel extends BaseModel
     }
 
     public function getUserByUsername($username) {
-        $statement = self::$db->prepare("SELECT * FROM users WHERE username='$username'");
-        $statement->execute();
+        $statement = self::$db->prepare("SELECT * FROM users WHERE username=?");
+        $statement->execute(
+            [
+                $username
+            ]
+        );
         $user = $statement->fetch();
 
         return $user;
     }
 
     public function getUserById($id) :array {
-        $statement = self::$db->prepare("SELECT * FROM users WHERE id='$id'");
-        $statement->execute();
+        $statement = self::$db->prepare("SELECT * FROM users WHERE id=?");
+        $statement->execute(
+            [
+                $id
+            ]
+        );
         $user = $statement->fetch();
 
         return $user;

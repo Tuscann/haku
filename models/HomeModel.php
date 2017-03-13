@@ -21,8 +21,12 @@ class HomeModel extends BaseModel
     // get a single review
     function getReviewById($id)
     {
-        $statement = self::$db->prepare("SELECT * FROM reviews WHERE id = '$id' LIMIT 1");
-        $statement->execute();
+        $statement = self::$db->prepare("SELECT * FROM reviews WHERE id = ? LIMIT 1");
+        $statement->execute(
+            [
+                $id
+            ]
+        );
         return $statement->fetch();
     }
 
@@ -31,15 +35,23 @@ class HomeModel extends BaseModel
     {
         $statement = self::$db->prepare(
             "SELECT comments.content, comments.date, users.username, users.profile_pic FROM users INNER JOIN Comments
-             ON users.id=comments.user_id WHERE review_id='$id' ORDER BY date ASC");
-        $statement->execute();
+             ON users.id=comments.user_id WHERE review_id=? ORDER BY date ASC");
+        $statement->execute(
+            [
+                $id
+            ]
+        );
         return $statement->fetchAll();
     }
 
     function getReviewImages($id)
     {
-        $statement = self::$db->prepare("SELECT * FROM images WHERE review_id = '$id'");
-        $statement->execute();
+        $statement = self::$db->prepare("SELECT * FROM images WHERE review_id = ?");
+        $statement->execute(
+            [
+                $id
+            ]
+        );
         return $statement->fetchAll();
     }
 
@@ -61,8 +73,12 @@ class HomeModel extends BaseModel
 
     public function getCurrentUser($username)
     {
-        $query = self::$db->prepare("SELECT * FROM users WHERE username='$username'");
-        $query->execute();
+        $query = self::$db->prepare("SELECT * FROM users WHERE username=?");
+        $query->execute(
+            [
+                $username
+            ]
+        );
         return $user = $query->fetch();
     }
 

@@ -111,7 +111,7 @@
                 <h3>Gameplay Trailer</h3>
                 <hr>
                 <p>
-                    <iframe class="video" width="1080" height="445" src="https://www.youtube.com/embed/TZ_G6XiHoUA">
+                    <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/TZ_G6XiHoUA">
                     </iframe>
                 </p>
             </div>
@@ -141,10 +141,8 @@
     <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.6s">
         <div class="about-div">
             <i class="fa fa-newspaper-o fa-4x icon-round-border"></i>
-            <h3>Lasted news</h3>
-            <hr/>
-            <hr/>
-
+            <h3>Lates news</h3>
+            <hr>
         </div>
     </div>
     <div>

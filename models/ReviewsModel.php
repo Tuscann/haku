@@ -25,8 +25,12 @@ class ReviewsModel extends BaseModel {
     }
 
     public function getReviews($category) {
-        $statement = self::$db->prepare("SELECT * FROM reviews WHERE category='$category' ORDER BY DATE ASC LIMIT 3");
-        $statement->execute();
+        $statement = self::$db->prepare("SELECT * FROM reviews WHERE category=? ORDER BY DATE ASC LIMIT 3");
+        $statement->execute(
+            [
+                $category
+            ]
+        );
         return $statement->fetchAll();
     }
 
