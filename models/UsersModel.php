@@ -22,7 +22,7 @@ class UsersModel extends BaseModel
     public function register(string $username, string $password_hash, string $email)
     {
         $statement = self::$db->prepare("INSERT INTO users (username, password, email, profile_pic) "
-            . "VALUES ('$username', '$password_hash', '$email', 'content/images/profile-pics/default.png')");
+                . "VALUES ('$username', '$password_hash', '$email', 'content/images/profile-pics/default.png')");
         $statement->execute();
         $user_id = self::$db->query("SELECT LAST_INSERT_ID()")->fetch();
         return $user_id;
