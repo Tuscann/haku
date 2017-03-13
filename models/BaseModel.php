@@ -1,4 +1,5 @@
 <?php
+include_once 'User.php';
 
 abstract class BaseModel
 {
@@ -13,5 +14,27 @@ abstract class BaseModel
                 die($e->getMessage());
             }
         }
+    }
+
+    public function getUserByUsername($username) {
+        $statement = self::$db->prepare("SELECT * FROM users WHERE username='$username'");
+        $statement->execute();
+        $user = $statement->fetch();
+
+        $currentUser = new User($user['id'], $user['username'], $user['email'],
+                        $user['profile_pic'], $user['first_name'], $user['last_name'], $user['password']);
+
+        return $currentUser;
+    }
+
+    public function getUserById($id) {
+        $statement = self::$db->prepare("SELECT * FROM users WHERE id='$id'");
+        $statement->execute();
+        $user = $statement->fetch();
+
+        $currentUser = new User($user['id'], $user['username'], $user['email'],
+            $user['profile_pic'], $user['first_name'], $user['last_name'], $user['password']);
+
+        return $currentUser;
     }
 }

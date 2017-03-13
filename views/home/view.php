@@ -183,7 +183,8 @@
 </section>
 
 <?php
-if (isset($_SESSION['loggedIn'])) { ?>
+
+if ($this->user != NULL) { ?>
     <section class="comment-form">
         <div class="submit-comment-div">
             <form class="submit-comment" method="post" action="?id=44#comments">
@@ -217,7 +218,7 @@ if (isset($_SESSION['loggedIn'])) { ?>
                                 <a target="_blank"
                                    href="<?= APP_ROOT ?>/users/profile/<?= $comment['username'] ?>"><?= $comment['username'] ?></a>
                             </strong>
-                            - <?= (new DateTime($comment['date']))->format('d-M-Y') ?></p>
+                            - <?= (new DateTime($comment['date']))->format('d-M-Y H:i') ?></p>
                         <p class="comment-content"><?= htmlspecialchars($comment['content']) ?></p>
                         <hr>
                     </div>

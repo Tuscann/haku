@@ -12,17 +12,16 @@ class UsersModel extends BaseModel
             ]
         );
         $user = $statement->fetch();
-        $newUser = new
-        User(
-            $user['username'],
-            $user['email'],
-            $user['id'],
-            $user['profile_pic'],
-            $user['first_name'],
-            $user['last_name'],
-            $user['password']
-        );
-        $_SESSION['user'] = serialize($newUser);
+//        $newUser = new
+//        User(
+//            $user['username'],
+//            $user['email'], $user['id'],
+//            $user['profile_pic'],
+//            $user['first_name'],
+//            $user['last_name'],
+//            $user['password']
+//        );
+//        $_SESSION['user'] = serialize($newUser);
         return $user;
     }
 
