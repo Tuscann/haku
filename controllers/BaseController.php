@@ -10,6 +10,7 @@ abstract class BaseController
     protected $title = "";
     protected $model;
     protected $validationErrors = [];
+    protected $user;
 
     function __construct(string $controllerName, string $actionName)
     {
@@ -27,6 +28,11 @@ abstract class BaseController
         if (class_exists($modelClassName)) {
             $this->model = new $modelClassName();
         }
+
+        if (isset($_SESSION['username'])) {
+            $this->user = $this->model->getUserByUsername($_SESSION['username']);
+        }
+
 
         $this->onInit();
     }
@@ -62,7 +68,7 @@ abstract class BaseController
 
     public function authorize()
     {
-        if (!$this->isLoggedIn) {
+        if (!$this->user) {
             $this->addErrorMessage("Please login first.");
             $this->redirect("users", "login");
         }

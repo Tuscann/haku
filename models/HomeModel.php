@@ -2,6 +2,7 @@
 
 class HomeModel extends BaseModel
 {
+
     //returns the latest 3 reviews
     function getLastReviews(): array
     {
@@ -59,11 +60,11 @@ class HomeModel extends BaseModel
 
     }
 
-    public function getCurrentUser($username)
-    {
-        $query = self::$db->prepare("SELECT * FROM users WHERE username='$username'");
-        $query->execute();
-        return $user = $query->fetch();
-    }
+//    public function getCurrentUser($username)
+//    {
+//        $query = self::$db->prepare("SELECT * FROM users WHERE username='$username'");
+//        $query->execute();
+//        return $user = $query->fetch();
+//    }
 
 }

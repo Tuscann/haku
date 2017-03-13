@@ -8,16 +8,16 @@ class UsersModel extends BaseModel
         $statement = self::$db->prepare("SELECT * FROM users WHERE username='$username'");
         $statement->execute();
         $user = $statement->fetch();
-        $newUser = new
-        User(
-            $user['username'],
-            $user['email'], $user['id'],
-            $user['profile_pic'],
-            $user['first_name'],
-            $user['last_name'],
-            $user['password']
-        );
-        $_SESSION['user'] = serialize($newUser);
+//        $newUser = new
+//        User(
+//            $user['username'],
+//            $user['email'], $user['id'],
+//            $user['profile_pic'],
+//            $user['first_name'],
+//            $user['last_name'],
+//            $user['password']
+//        );
+//        $_SESSION['user'] = serialize($newUser);
         return $user;
     }
 
@@ -60,21 +60,5 @@ class UsersModel extends BaseModel
             return true;
         }
         return false;
-    }
-
-    public function getUserByUsername($username) {
-        $statement = self::$db->prepare("SELECT * FROM users WHERE username='$username'");
-        $statement->execute();
-        $user = $statement->fetch();
-
-        return $user;
-    }
-
-    public function getUserById($id) :array {
-        $statement = self::$db->prepare("SELECT * FROM users WHERE id='$id'");
-        $statement->execute();
-        $user = $statement->fetch();
-
-        return $user;
     }
 }

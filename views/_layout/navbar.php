@@ -19,7 +19,7 @@
                 <li><a href="<?= APP_ROOT ?>/news/">News</a></li>
             </ul>
             <?php
-            if (empty($_SESSION['loggedIn'])) {
+            if ($this->user == NULL) {
                 ?>
                 <ul class="nav navbar-nav navbar-right nav-auth">
                     <li>
@@ -41,15 +41,15 @@
                                 <span>
                                     Welcome,
                                     <strong>
-                                        <?php echo $_SESSION['username'] ?>
+                                        <?php echo $this->user->getUsername() ?>
                                     </strong>
-                                     <img class="navbar-pic" src="<?= $this->setImagePath($_SESSION['profile-pic']); ?>"
+                                     <img class="navbar-pic" src="<?= $this->setImagePath($this->user->getPicture()); ?>"
                                           alt="">
                                 </span>
                                     <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a href="<?= APP_ROOT ?>/users/profile/<?= $_SESSION['userId'] ?>">Profile</a>
+                                <li><a href="<?= APP_ROOT ?>/users/profile/<?= $this->user->getId() ?>">Profile</a>
                                 </li>
                                 <li><a href="<?= APP_ROOT ?>/users/logout">Log out</a></li>
                             </ul>
