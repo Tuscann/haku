@@ -2,6 +2,7 @@
 
 class HomeModel extends BaseModel
 {
+
     //returns the latest 3 reviews
     function getLastReviews(): array
     {
@@ -81,5 +82,4 @@ class HomeModel extends BaseModel
         );
         return $user = $query->fetch();
     }
-
 }

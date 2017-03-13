@@ -5,6 +5,7 @@ class HomeController extends BaseController
     function index() {
         $reviews = $this->model->getLastReviews();
         $this->reviews = $reviews;
+        //var_dump($this->user);
     }
 
     function review(int $id)
