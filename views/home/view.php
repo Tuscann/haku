@@ -1,52 +1,4 @@
-<!-- Slideshow -->
-<div class="slideshow">
-    <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1300px; height: 500px; overflow:
-    hidden; visibility: hidden;">
-        <!-- Loading Screen -->
-        <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
-            <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
-            <div style="position:absolute;display:block;background:url('<?= APP_ROOT ?>content/images/images/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
-        </div>
-        <div data-u="slides"
-             style="cursor: default; position: relative; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;">
-            <div data-p="225.00" style="display: none;">
-                <img src="<?= APP_ROOT . $this->reviewImages[0]['path'] . $this->reviewImages[0]['name'] ?>.jpg" <?php array_splice($this->reviewImages, 0, 1); ?> />
-                <div style="position: absolute; top: 30px; left: 30px; width: 480px; height: 120px; font-size: 50px; color: #ffffff; line-height: 60px;"></div>
-                <div style="position: absolute; top: 300px; left: 30px; width: 480px; height: 120px; font-size: 30px; color: #ffffff; line-height: 38px;"></div>
-                <div data-u="caption" data-t="0"
-                     style="position: absolute; top: 100px; left: 600px; width: 445px; height: 300px;"></div>
-                <div data-u="caption" data-t="5"
-                     style="position: absolute; top: 120px; left: 650px; width: 470px; height: 220px;">
-                    <div style="position: absolute; top: 4px; left: 45px; width: 379px; height: 213px; overflow: hidden;"></div>
-                </div>
-            </div>
-            <div data-p="225.00" style="display: none;">
-                <img src="<?= APP_ROOT . $this->reviewImages[0]['path'] . $this->reviewImages[0]['name'] ?>.jpg" <?php array_splice($this->reviewImages, 0, 1); ?>/>
-            </div>
-            <div data-p="225.00" style="display: none;">
-                <img data-u="image"
-                     src="<?= APP_ROOT . $this->reviewImages[0]['path'] . $this->reviewImages[0]['name'] ?>.jpg" <?php array_splice($this->reviewImages, 0, 1); ?>/>
-            </div>
-        </div>
-        <!-- Bullet Navigator -->
-        <div data-u="navigator" class="jssorb05" style="bottom:16px;right:16px;" data-autocenter="1">
-            <!-- bullet navigator item prototype -->
-            <div data-u="prototype" style="width:16px;height:16px;"></div>
-        </div>
-        <!-- Arrow Navigator -->
-        <span data-u="arrowleft" class="jssora22l" style="top:0px;left:12px;width:40px;height:58px;"
-              data-autocenter="2"></span>
-        <span data-u="arrowright" class="jssora22r" style="top:0px;right:12px;width:40px;height:58px;"
-              data-autocenter="2"></span>
 
-    </div>
-    <!-- #endregion Jssor Slider End -->
-</div>
-
-
-<hr>
-
-<!-- Section -->
 
 <section id="one">
     <div class="tag-line">
@@ -56,7 +8,7 @@
                 <div class="col-lg-12  col-md-12 col-sm-12">
 
                     <h2 data-scroll-reveal="enter from the bottom after 0.1s"><i class="fa fa-circle-o-notch"></i>
-                        WELCOME TO THE WITCHER 3 REVIEW <i class="fa fa-circle-o-notch"></i></h2>
+                        <?=htmlspecialchars($this->review['title'])?> Review <i class="fa fa-circle-o-notch"></i></h2>
                 </div>
             </div>
         </div>
@@ -67,17 +19,15 @@
             <div class="col-lg-12 text-center">
                 <h2 class="text-primary"><?= htmlspecialchars($this->review['title']) ?></h2>
                 <p><strong>Posted on:</strong> <?= (new DateTime($this->review['date']))->format('d-M-Y') ?></p>
+                <p><strong>Author: </strong><?=$this->review['username']?> </p>
                 <hr class="primary">
             </div>
         </div>
     </div>
     <div class="container">
-        <p class="osn">The Witcher 3: Wild Hunt[a] is an action role-playing video game developed and published by CD
-            Projekt RED. Announced in February 2013, it was released worldwide for Microsoft Windows, PlayStation 4, and
-            Xbox One in 2015. The game is the third in the series, preceded by The Witcher and The Witcher 2: Assassins
-            of Kings, which are based on the series of fantasy novels by Polish author Andrzej Sapkowski. </p>
+        <p class="osn"><?=htmlspecialchars($this->review['content'])?></p>
         <!-- Снимката да бъде от дясно на текста или както прецените че ще е по - добре визуализирана-->
-        <img src="<?= APP_ROOT . $this->reviewImages[0]['path'] . "/" . $this->reviewImages[0]['name'] ?>.jpg" <?php array_splice($this->reviewImages, 0, 1); ?>
+        <img src="<?= APP_ROOT.$this->review['picture'] ?>"
              width="700px"/>
     </div>
 
@@ -87,14 +37,7 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
                 <h1 data-scroll-reveal="enter from the bottom after 0.2s" class="header-line">Gameplay </h1>
                 <p data-scroll-reveal="enter from the bottom after 0.3s">
-                    <strong>The Witcher 3:</strong> Wild Hunt is an action role-playing game set in an open world
-                    environment which is more than thirty times larger than previous Witcher games, necessitating
-                    players sail by boat to some locations and ride on horseback to others. Fast traveling to
-                    already-visited locations, however, is also possible. The open world in The Witcher 3 was described
-                    before release to be "20% bigger than Skyrim". Many actions the player performs affect the world,
-                    with many of the quests having a number of options on how to complete them, and differing outcomes.
-                    CD Projekt RED anticipated approximately 100 hours for the completion of the game, with half of them
-                    belonging to side quests, and the other half belonging to the main story.
+                    <?=htmlspecialchars($this->review['gameplay'])?>
                 </p>
             </div>
 
@@ -111,8 +54,9 @@
                 <h3>Gameplay Trailer</h3>
                 <hr>
                 <p>
-                    <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/TZ_G6XiHoUA">
+                    <iframe class="video" width="560" height="315" src="<?=$this->review['video']?>">
                     </iframe>
+
                 </p>
             </div>
         </div>
@@ -120,7 +64,7 @@
 </section>
 
 <section id="two">
-    <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.5s">
+    <div class="col-lg-4  col-md-4 col-sm-4 center-block" data-scroll-reveal="enter from the bottom after 0.5s">
         <div class="about-div">
             <i class="fa fa-photo fa-4x icon-round-border"></i>
             <h3>Photos of the game</h3>
@@ -141,43 +85,9 @@
     <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.6s">
         <div class="about-div">
             <i class="fa fa-newspaper-o fa-4x icon-round-border"></i>
-            <h3>Lates news</h3>
+            <h3>Latest news</h3>
             <hr>
         </div>
-    </div>
-    <div>
-        <p class="osn"><strong>Beyond The Horizon:</strong> CD Projekt Red states that the world of The Witcher 3 is 35
-            times larger than that of The Witcher 2, with different regions based on various cultures and mythologies.
-            Our
-            demo showed off forests, coastal regions, and a few small towns, as well as the dynamic day and night cycle
-            and
-            weather systems. Those systems aren't just cosmetic; for example, your boat can be smashed apart on the
-            rocky
-            coasts if you try to take it out during a storm, and werewolves pose a significantly greater risk during the
-            night. Your exploration of the world will be driven by a wide variety of main quests, side quests, and
-            random
-            events, which CD Projekt Red is attempting to blur together.</p> <br>
-        <p class="osn"><strong>Side Quests That Mean Something:</strong> The majority of our demo focused on an optional
-            side quest that involves Geralt helping a town plagued by murderous creature living in the nearby woods. The
-            townsfolk are split on how to best handle the beast, and it's up to Geralt to investigate the killings,
-            deduce
-            what type of monster is responsible, and choose the best course of action. The side story contains several
-            twists and interactions with the townsfolk, along with a challenging battle against the culprit – a
-            mystical,
-            tree-like monster called a leshen. Geralt ultimately gets paid for his services, but true to the series'
-            intricate storytelling, the outcome of the mission is far from black and white, and Geralt isn't entirely
-            happy
-            with how things turn out. This is just one of countless sidequests that the player can freely skip.</p><br>
-        <p class="osn"><strong>Monster Mash:</strong> The leshen in the demo is a formidable monster, but it's not
-            considered a boss. CD Projekt Red says The Witcher 3 contains over 80 such creatures, each with their own
-            characteristics. Before tracking to the leshen, Geralt checks his bestiary for help, which contains a wealth
-            of
-            information on the monster, including its size, the sounds it makes, its special abilities, and
-            vulnerabilities.
-            Defeating the leshen requires tracking down and destroying three totems in the woods to weaken the beast
-            before
-            taking it on.</p>
-
     </div>
 
 </section>
@@ -205,7 +115,7 @@ if ($this->user != NULL) { ?>
 <?php } ?>
 
 <section id="four">
-    <div class="container">
+    <div class="container" id="comments">
         <div class="row">
             <div class="media-center">
                 <h2 class="text-primary-media">Comments</h2>

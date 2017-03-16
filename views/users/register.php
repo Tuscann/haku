@@ -3,8 +3,6 @@
         <div class="main">
             <h3 class="dark-grey">Registration</h3>
 
-
-
             <form method="POST" name="sign_up">
                 <?php if (isset($this->validationErrors['already_exists']))
                     echo '<div class="form-group col-lg-12 alert alert-danger text-center">

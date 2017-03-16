@@ -27,7 +27,7 @@
         <?php endforeach; ?>
     </div>
     <div class="text-center more-reviews">
-        <a class="btn btn-primary" href="#" role="button">Show more</a>
+        <a class="btn btn-primary" href="<?=APP_ROOT?>/reviews/" role="button">Show more</a>
     </div>
     <h1 class="text-center">Latest news</h1>
     <hr>

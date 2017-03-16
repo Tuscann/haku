@@ -22,7 +22,11 @@ class HomeModel extends BaseModel
     // get a single review
     function getReviewById($id)
     {
-        $statement = self::$db->prepare("SELECT * FROM reviews WHERE id = ? LIMIT 1");
+        $statement = self::$db->prepare("SELECT 
+reviews.category, reviews.content, reviews.date, reviews.picture, reviews.video, reviews.title, reviews.gameplay, users.username
+FROM reviews
+INNER JOIN users
+ON reviews.user_id=users.id WHERE reviews.id = ? LIMIT 1");
         $statement->execute(
             [
                 $id
