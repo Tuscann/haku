@@ -20,19 +20,28 @@ class HomeController extends BaseController
         }
     }
 
+    function deleteComment($id) {
+        if ($this->isLoggedIn) {
+            if (isset($_POST['delete-comment']))
+            {
+                $this->model->deleteComment($id);
+            }
+        }
+    }
 
     function view($reviewId) {
 
         $this->submitComment($reviewId);
 
         // get all comments
-
         $comments = $this->model->getCommentsById($reviewId);
         $this->comments = $comments;
-
         // get all reviews
         $review = $this->model->getReviewById($reviewId);
         $this->review = $review;
+        if (!$review) {
+            header("Location: ".APP_ROOT);
+        }
 
         // get all reviews images
         $images = $this->model->getReviewImages($reviewId);
@@ -41,5 +50,7 @@ class HomeController extends BaseController
         if (!$review) {
             $this->addErrorMessage("This review doesn't exist.");
         }
+
+
     }
 }

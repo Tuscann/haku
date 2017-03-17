@@ -5,7 +5,7 @@
             <select class="form-control" id="category" name="category">
                 <option>PC</option>
                 <option>PS4</option>
-                <option>Xbox One</option>
+                <option>Xbox</option>
             </select>
         </div>
         <div class="form-group">

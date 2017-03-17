@@ -1,11 +1,34 @@
-<div class="jumbotron">
-    <div class="container">
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a
-            jumbotron and three supporting pieces of content. Use it as a starting point to create something more
-            unique.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+<div class="">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img class="first-slide" src="<?=APP_ROOT?>/content/images/carousel/banner1.png">
+        </div>
+
+        <div class="item">
+            <img class="second-slide" src="<?=APP_ROOT?>/content/images/carousel/banner2.png" alt="Second slide">
+        </div>
+        <div class="item">
+            <img class="third-slide" src="<?=APP_ROOT?>/content/images/carousel/banner3.png" alt="Third slide">
+        </div>
     </div>
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div><!-- /.carousel -->
 </div>
+
 
 <div class="container">
     <!-- Example row of columns -->
@@ -29,6 +52,4 @@
     <div class="text-center more-reviews">
         <a class="btn btn-primary" href="<?=APP_ROOT?>/reviews/" role="button">Show more</a>
     </div>
-    <h1 class="text-center">Latest news</h1>
-    <hr>
 </div>

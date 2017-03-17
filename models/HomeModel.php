@@ -11,6 +11,11 @@ class HomeModel extends BaseModel
         return $statement->fetchAll();
     }
 
+    function deleteComment($id) {
+        $statement = self::$db->prepare("DELETE FROM comments WHERE id='$id'");
+        $statement->execute();
+    }
+
     //returns all reviews
     function getReviews(): array
     {
@@ -39,8 +44,8 @@ ON reviews.user_id=users.id WHERE reviews.id = ? LIMIT 1");
     public function getCommentsById($id)
     {
         $statement = self::$db->prepare(
-            "SELECT comments.content, comments.date, users.username, users.profile_pic FROM users INNER JOIN Comments
-             ON users.id=comments.user_id WHERE review_id=? ORDER BY date ASC");
+            "SELECT comments.user_id, comments.id AS comment_id, comments.content, comments.date, users.username, users.profile_pic FROM users INNER JOIN Comments
+             ON users.id=comments.user_id WHERE review_id=? ORDER BY date DESC");
         $statement->execute(
             [
                 $id

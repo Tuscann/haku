@@ -1,1 +1,3 @@
-
+<div style="height: 460px" class="container">
+    <h1  class="text-center">Coming soon...
+</div>

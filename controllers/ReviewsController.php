@@ -11,28 +11,45 @@ class ReviewsController extends BaseController
 
     function PC()
     {
+        $reviews = $this->model->getReviewsByCategory("PC");
+        $this->reviews = $reviews;
 
     }
 
     function PS4()
     {
+        $reviews = $this->model->getReviewsByCategory("PS4");
+        $this->reviews = $reviews;
 
     }
 
     function Xbox()
     {
+        $reviews = $this->model->getReviewsByCategory("Xbox");
+        $this->reviews = $reviews;
+
+    }
+
+
+
+    function edit($id) {
+        $review = $this->model->getReviewById($id);
+        $this->review = $review;
+        if (!$review) {
+            header("Location: ".APP_ROOT);
+        }
 
     }
 
     function search()
     {
+        $reviews = '';
+        $this->reviews = false;
 
         if ($this->isPost) {
             $author = $_POST['author'];
             $category = $_POST['category-filter'];
             $game = $_POST['game-filter'];
-            $reviews = '';
-
 
             if (isset($_POST['title-search'])) {
                 echo "asdasda";
@@ -41,12 +58,8 @@ class ReviewsController extends BaseController
             } else {
                 $reviews = $this->model->getSearchResults($author, $category, '', $game);
             }
-            if (!$reviews) {
-                echo "No results found";
-            }
 
             $this->reviews = $reviews;
-
         }
 
         $games = $this->model->getGames();
@@ -64,7 +77,6 @@ class ReviewsController extends BaseController
             }
 
             if ($file['size'] > 5000000) {
-                var_dump($file['size']);
                 $this->setValidationError('file', "Sorry, your file is too large. Allowed size: 3 MB.");
             }
 
@@ -127,4 +139,8 @@ class ReviewsController extends BaseController
 
             }
         }
+
+
+
+
 }

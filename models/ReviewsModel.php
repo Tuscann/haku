@@ -6,23 +6,55 @@ class ReviewsModel extends BaseModel {
 
     }
 
-    public function getReviewById($id) {
+    function getReviewsByCategory($category) {
+
+        $query = "SELECT * FROM reviews WHERE category='$category'";
+        $statement = self::$db->prepare($query);
+        $statement->execute(
+            [
+                $category
+            ]
+        );
+        return $statement->fetchAll();
+    }
+
+    // get a single review
+    function getReviewById($id)
+    {
+        $statement = self::$db->prepare("SELECT 
+reviews.category, reviews.content, reviews.date, reviews.picture, reviews.video, reviews.title, reviews.gameplay, users.username
+FROM reviews
+INNER JOIN users
+ON reviews.user_id=users.id WHERE reviews.id = ? LIMIT 1");
+        $statement->execute(
+            [
+                $id
+            ]
+        );
+        return $statement->fetch();
+    }
+
+    public function deleteReview($id) {
 
     }
 
     public function searchByTitle($title) {
 
-        $query = "SELECT * FROM reviews WHERE title LIKE '%$title%' OR content LIKE '%$title%'";
-
+        $query = "SELECT * FROM reviews WHERE title LIKE '%?%' OR content LIKE '%?%'";
         $statement = self::$db->prepare($query);
-        $statement->execute();
+        $statement->execute(
+            [
+                $title,
+                $title
+            ]
+        );
         return $statement->fetchAll();
     }
 
     public function getSearchResults($author, $category, $title, $game) {
 
         $categorySearch = " AND reviews.category='$category'";
-        $authorSearch = " WHERE users.username='$author'";
+        $authorSearch = " WHERE users.username=?";
         $gamesSearch = " AND games.name='$game'";
 
         if ($category == "All") {
@@ -54,7 +86,11 @@ AND reviews.title
 LIKE '%$title%'" . $authorSearch . $categorySearch . $gamesSearch;
 
         $statement = self::$db->prepare($query);
-        $statement->execute();
+        $statement->execute(
+            [
+                $author
+            ]
+        );
         return $statement->fetchAll();
     }
 
@@ -73,7 +109,6 @@ LIKE '%$title%'" . $authorSearch . $categorySearch . $gamesSearch;
         );
         return $statement->fetchAll();
     }
-
 
     public function submitReview($user_id, $game_id, $category, $title, $content, $gameplay, $picture, $video) {
         $statement = self::$db->prepare(

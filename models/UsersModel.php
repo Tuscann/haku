@@ -7,16 +7,6 @@ class UsersModel extends BaseModel
         $statement = self::$db->prepare("SELECT * FROM users WHERE username='$username'");
         $statement->execute();
         $user = $statement->fetch();
-//        $newUser = new
-//        User(
-//            $user['username'],
-//            $user['email'], $user['id'],
-//            $user['profile_pic'],
-//            $user['first_name'],
-//            $user['last_name'],
-//            $user['password']
-//        );
-//        $_SESSION['user'] = serialize($newUser);
         return $user;
     }
     public function register(string $username, string $password_hash, string $email)
