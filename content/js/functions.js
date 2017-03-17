@@ -25,3 +25,9 @@ function showValidationError(fieldName, errorMsg) {
     );
     field.focus();
 }
+
+function removeDummy() {
+    var elem = document.getElementById('dummy');
+    elem.parentNode.removeChild(elem);
+    return false;
+}

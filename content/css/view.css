@@ -91,8 +91,6 @@ html{
     text-align: left;
     border: 2px solid;
     border-color: #EEEEEE;
-
-    
 }
 
 #two {
@@ -104,7 +102,6 @@ html{
 }
 
 #three {
-
     margin-top: 20px;
     min-height: 400px;
     min-width: 200px;
@@ -147,9 +144,7 @@ h1::after {
 /*=====================================
   ABOUT STYLES
   ===================================*/
-.about-div {
-    padding: 30px;
-}
+
 
 .icon-round-border {
     border: 10px double #1A94C4;
@@ -176,10 +171,6 @@ h1::after {
     transition: 0.3s;
 }
 
-.about-div hr {
-    border: 1px solid #1A94C4;
-}
-
 .about-div h3 {
     font-size: 25px;
     font-weight: 700;
@@ -188,4 +179,10 @@ h1::after {
 
 .about-div p {
     padding-top: 10px;
+}
+
+
+.view-main-pic {
+    width: 70%;
+    border-radius: 1%;
 }

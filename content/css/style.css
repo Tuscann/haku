@@ -126,10 +126,6 @@ html * {
     padding-left: 50px;
 }
 
-.form-control-comment {
-    width: 400px;
-}
-
 .submit-comment {
     margin: 10px;
 }
@@ -271,9 +267,9 @@ html * {
             height: 200px;
         }
     }
+}
 
-    .form-control {
-    width: 500px;
-        align-self: center;
-    }
+.header-video {
+    max-width: 100%;
+    max-height: 100%;
 }
