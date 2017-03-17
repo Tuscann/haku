@@ -30,9 +30,60 @@ class ReviewsController extends BaseController
 
     }
 
-
+    function deleteReview($id) {
+        if ($this->isPost) {
+            if (isset($_POST['delete-review'])) {
+                $this->model->deleteReview($id);
+            }
+        }
+    }
 
     function edit($id) {
+        $this->deleteReview($id);
+
+
+        if ($this->isPost) {
+            if (isset($_POST['edit-review'])) {
+                $this->authorize();
+
+                $title = $_POST['title'];
+                $video = $_POST['video'];
+                $content = $_POST['content'];
+                $pictureName = '';
+                $gameplay = $_POST['gameplay'];
+
+
+                //generate a name for the review picture
+                while (true) {
+                    $pictureName = uniqid();
+                    if (!file_exists(APP_ROOT."/content/images/review/".$pictureName)) {
+                        break;
+                    }
+                };
+
+                //$review_pic_path = "content\\images\\review\\" . $pictureName . ".png";
+                //$review_pic_new_path = "/content/images/review/" . $pictureName . ".png";
+
+                $this->uploadValidation($title, $content, $gameplay, $video);
+                //$this->uploadPicture($_FILES['review-pic'], $review_pic_path);
+
+                $embedLink = str_replace("watch?v=", "embed/", $video);
+
+                if ($this->formValid()) {
+                    $isPosted = $this->model->editReview($id, $title, $embedLink, $content, $gameplay);
+
+                    if ($isPosted) {
+                        header('Location: ' . APP_ROOT );
+                        //. "/reviews/edit/" . $id
+                    } else {
+                        $this->addErrorMessage("Something went wrong");
+                    }
+                } else {
+                }
+
+            }
+        }
+
         $review = $this->model->getReviewById($id);
         $this->review = $review;
         if (!$review) {
@@ -91,6 +142,25 @@ class ReviewsController extends BaseController
         }
     }
 
+    function uploadValidation($title, $content, $gameplay, $video) {
+        if (strlen($title) < 3) {
+            $this->setValidationError("title", "Title cannot be shorter than 3 symbols.");
+        }
+
+        //youtube url validation
+        if (!preg_match("/http(?:s?):\/\/(?:www\.)?youtu(?:be\.com\/watch\?v=|\.be\/)([\w\-\_]*)(&(amp;)?‌​[\w\?‌​=]*)?/", $video)) {
+            $this->setValidationError("video", "Please enter a valid video url.");
+        }
+
+        if (strlen($content) < 20) {
+            $this->setValidationError("content", "Be more creative. Minimum length: 20 symbols");
+        }
+
+        if (strlen($gameplay) < 20) {
+            $this->setValidationError("gameplay", "Be more creative. Minimum length: 20 symbols");
+        }
+    }
+
     function post()
     {
         $games = $this->model->getGames();
@@ -102,30 +172,24 @@ class ReviewsController extends BaseController
             $title = $_POST['title'];
             $video = $_POST['video'];
             $content = $_POST['content'];
-            $review_pic_path = "content\\images\\review\\" . $title . ".png";
-            $review_pic_new_path = "/content/images/review/" . $title . ".png";
+            $pictureName = '';
+
+            //generate a name for the review picture
+            while (true) {
+                $pictureName = uniqid();
+                if (!file_exists(APP_ROOT."/content/images/review/".$pictureName)) {
+                    break;
+                }
+            };
+
+            $review_pic_path = "content\\images\\review\\" . $pictureName . ".png";
+            $review_pic_new_path = "/content/images/review/" . $pictureName . ".png";
             $category = $_POST['category'];
             $gameplay = $_POST['gameplay'];
 
+            $this->uploadValidation($title, $content, $gameplay, $video);
             $this->uploadPicture($_FILES['review-pic'], $review_pic_path);
-
-                if (strlen($title) < 1) {
-                    $this->setValidationError("title", "Title cannot be empty");
-                }
-
-                //youtube url validation
-                if (!preg_match("/http(?:s?):\/\/(?:www\.)?youtu(?:be\.com\/watch\?v=|\.be\/)([\w\-\_]*)(&(amp;)?‌​[\w\?‌​=]*)?/", $video)) {
-                    $this->setValidationError("video", "Please enter a valid video url.");
-                }
-                 $embedLink = str_replace("watch?v=", "embed/", $video);
-
-            if (strlen($content) < 1) {
-                    $this->setValidationError("content", "Content cannot be empty");
-                }
-
-            if (strlen($gameplay) < 1) {
-                $this->setValidationError("gameplay", "Gameplay cannot be empty");
-            }
+            $embedLink = str_replace("watch?v=", "embed/", $video);
 
                 if ($this->formValid()) {
                     $isPosted = $this->model->submitReview($this->user->getId(), 2, $category, $title, $content, $gameplay, $review_pic_new_path, $embedLink);
@@ -136,7 +200,6 @@ class ReviewsController extends BaseController
                         $this->addErrorMessage("Something went wrong");
                     }
                 }
-
             }
         }
 

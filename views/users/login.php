@@ -21,6 +21,7 @@
                 </div>
 
                 <button type="submit" class="btn btn btn-success">
+                    Log in
                 </button>
             </form>
         </div>

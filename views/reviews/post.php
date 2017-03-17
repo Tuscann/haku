@@ -1,5 +1,5 @@
 <div class="container">
-    <form method="POST" enctype= "multipart/form-data">
+    <form class="post-review center-block" method="POST" enctype= "multipart/form-data">
         <div class="form-group">
             <label for="category">Select category</label>
             <select class="form-control" id="category" name="category">
@@ -19,25 +19,25 @@
 
         <div class="form-group">
             <label for="title">Title</label>
-            <input type="text" class="form-control" name="title" id="title" placeholder="Enter review title">
+            <input value="<?php if (isset($_POST['title'])) {echo $_POST['title'];} ?>" type="text" class="form-control" name="title" id="title" placeholder="Enter review title">
             <span class="text-danger"><?php if (isset($this->validationErrors['title'])) echo $this->validationErrors['title']; ?></span>
         </div>
 
         <div class="form-group">
             <label for="video">Video</label>
-            <input type="text" class="form-control" id="video" name="video" placeholder="Enter youtube url">
+            <input value="<?php if (isset($_POST['video'])) {echo $_POST['video'];} ?>" type="text" class="form-control" id="video" name="video" placeholder="Enter youtube url">
             <span class="text-danger"><?php if (isset($this->validationErrors['video'])) echo $this->validationErrors['video']; ?></span>
         </div>
 
         <div class="form-group">
             <label for="content">Content</label>
-            <textarea class="form-control" id="content" name="content" rows="3"></textarea>
+            <textarea class="form-control" id="content" name="content" rows="3"><?php if (isset($_POST['content'])) {echo $_POST['content'];}?></textarea>
             <span class="text-danger"><?php if (isset($this->validationErrors['content'])) echo $this->validationErrors['content']; ?></span>
         </div>
 
         <div class="form-group">
-            <label for="content">Gameplay</label>
-            <textarea class="form-control" id="gameplay" name="gameplay" rows="3"></textarea>
+            <label for="gameplay">Gameplay</label>
+            <textarea class="form-control" id="gameplay" name="gameplay" rows="3"><?php if (isset($_POST['gameplay'])) {echo $_POST['gameplay'];} ?></textarea>
             <span class="text-danger"><?php if (isset($this->validationErrors['gameplay'])) echo $this->validationErrors['gameplay']; ?></span>
         </div>
 

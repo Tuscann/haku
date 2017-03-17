@@ -130,14 +130,10 @@ html * {
     margin: 10px;
 }
 
-.submit-comment-div {
-
-}
-
 .profile-pic {
     border-radius: 50%;
-    height: 100px;
-    width: 100px;
+    height: 200px;
+    width: 200px;
     margin-top: 20px;
 }
 
@@ -272,4 +268,28 @@ html * {
 .header-video {
     max-width: 100%;
     max-height: 100%;
+}
+
+.profile-name {
+    font-size: 50px;
+}
+
+.edit-profile {
+    background-color: #222222;
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.edit-profile:hover {
+    background-color: #383838;
+    color: whitesmoke;
+}
+
+.post-review {
+    width: 450px;
+}
+
+.review-content {
+    white-space: nowrap;
+    word-wrap: break-word;
 }

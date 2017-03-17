@@ -6,6 +6,31 @@ class ReviewsModel extends BaseModel {
 
     }
 
+    function deleteReview($id) {
+        $query = "DELETE FROM reviews WHERE id=?";
+        $statement = self::$db->prepare($query);
+        $statement->execute(
+            [
+                $id
+            ]
+        );
+
+    }
+
+    function editReview($id, $title, $video, $content, $gameplay) {
+        $query = "UPDATE reviews SET title=?, video=?, content=?, gameplay=? WHERE id=?";
+        $statement = self::$db->prepare($query);
+        $statement->execute(
+            [
+                $title,
+                $video,
+                $content,
+                $gameplay,
+                $id
+            ]
+        );
+    }
+
     function getReviewsByCategory($category) {
 
         $query = "SELECT * FROM reviews WHERE category='$category'";
@@ -22,7 +47,7 @@ class ReviewsModel extends BaseModel {
     function getReviewById($id)
     {
         $statement = self::$db->prepare("SELECT 
-reviews.category, reviews.content, reviews.date, reviews.picture, reviews.video, reviews.title, reviews.gameplay, users.username
+reviews.id, reviews.category, reviews.content, reviews.date, reviews.picture, reviews.video, reviews.title, reviews.gameplay, users.username
 FROM reviews
 INNER JOIN users
 ON reviews.user_id=users.id WHERE reviews.id = ? LIMIT 1");
@@ -32,10 +57,6 @@ ON reviews.user_id=users.id WHERE reviews.id = ? LIMIT 1");
             ]
         );
         return $statement->fetch();
-    }
-
-    public function deleteReview($id) {
-
     }
 
     public function searchByTitle($title) {

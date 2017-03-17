@@ -49,7 +49,7 @@
                                     <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a href="<?= APP_ROOT ?>/users/profile/<?= $this->user->getId() ?>">Profile</a>
+                                <li><a href="<?= APP_ROOT ?>/users/view/<?= $this->user->getUsername()?>">Profile</a>
                                 </li>
                                 <li><a href="<?= APP_ROOT ?>/users/logout">Log out</a></li>
                             </ul>

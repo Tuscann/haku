@@ -13,14 +13,22 @@
     </div>
 
     <div class="container">
+
         <div class="row">
             <div class="col-lg-12 text-center">
+
                 <h2 class="text-primary"><?= htmlspecialchars($this->review['title']) ?></h2>
 
                 <p><strong>Posted on:</strong> <?= (new DateTime($this->review['date']))->format('d-M-Y') ?></p>
-                <p><strong>Author: </strong><?=$this->review['username']?> </p>
+                <p><strong>Author:  </strong><a target="_blank" href="<?=APP_ROOT."/users/view/".$this->review['username']?>"><?=$this->review['username']?></a> </p>
                 <hr class="primary">
             </div>
+
+            <?php
+            if ($this->review['username'] == $this->user->getUsername()) : ?>
+                <a href="<?=APP_ROOT."/reviews/edit/".$this->review['id']?>" class="edit-profile btn">Edit review</a>
+            <?php endif; ?>
+
         </div>
     </div>
 
@@ -65,9 +73,9 @@ if ($this->user != NULL) { ?>
     <section class="comment-form">
         <div class="submit-comment-div">
             <form class="submit-comment" method="post" action="?#comments">
-                <div class="form-group ">
+                <div class="form-group">
                     <label for="comment">Submit a comment: </label><br>
-                    <textarea class="form-control-comment" id="comment" name="comment" rows="3"></textarea>
+                    <textarea class="form-control-comment" id="comment" name="comment" rows="3" cols="40"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary" name="submit-comment">Submit</button>
             </form>
@@ -94,7 +102,7 @@ if ($this->user != NULL) { ?>
                             <img class="comment-pic" src="<?= $this->setImagePath($comment['profile_pic']) ?>"/>
                             <strong>
                                 <a target="_blank"
-                                   href="<?= APP_ROOT ?>/users/profile/<?= $comment['username'] ?>"><?= $comment['username'] ?></a>
+                                   href="<?= APP_ROOT ?>/users/view/<?= $comment['username'] ?>"><?= $comment['username'] ?></a>
                             </strong>
                             - <?= (new DateTime($comment['date']))->format('d-M-Y H:i') ?>
                             </div>
