@@ -55,9 +55,6 @@
                                 </form>
                             </div>
                         </div>
-
-                        <button type="submit" name="submit-search" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-
                     </div>
 
                 </div>

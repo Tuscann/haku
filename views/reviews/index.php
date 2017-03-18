@@ -56,7 +56,6 @@
                             </div>
                         </div>
 
-                        <button type="submit" name="submit-search" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
 
                     </div>
 
@@ -80,7 +79,7 @@ for ($i = 0; $i < count($categories); $i++) :?>
                 <span class="notify-badge"><?=$categories[$i]?></span>
                 <div class="review-content">
                     <div class="review-info">
-                        <h3><a href="<?=APP_ROOT?>/home/view/<?=$review['id']?>"><?=htmlentities($review['title'])?></a></h3>
+                        <h3><a href="<?=APP_ROOT?>/home/view/<?=$review['id']?>"><?=substr(htmlentities($review['title']), 0, 35)?></a></h3>
                         <p><?=(new DateTime($review['date']))->format('M d, Y')?></p>
                         <p><?=substr($review['content'], 0, 90)."..."?></p>
                     </div>

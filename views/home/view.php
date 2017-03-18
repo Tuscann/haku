@@ -6,10 +6,13 @@
 
             <div class="col-lg-12 text-center">
                 <div class="center-block">
-                    <?php
-                    if ($this->review['username'] == $this->user->getUsername()) : ?>
+                    <?php if (isset($_SESSION['username'])) : ?>
+                    <?php if ($this->review['username'] == $this->user->getUsername()) : ?>
                         <a href="<?=APP_ROOT."/reviews/edit/".$this->review['id']?>" class="edit-profile btn">Edit review</a>
                     <?php endif; ?>
+                    <?php endif; ?>
+
+
                 </div>
                 <h2 class="text-primary"><?= htmlspecialchars($this->review['title']) ?></h2>
 
@@ -22,18 +25,19 @@
         </div>
     </div>
 
-    <div class="container">
-        <img class="view-main-pic center-block" src="<?= APP_ROOT.$this->review['picture'] ?>"/>
-        <div class="text-center">
-            <h1>Content</h1>
-        </div>
-        <div class="text-container">
-            <?=htmlspecialchars($this->review['content'])?>
-        </div>
-    </div>
+
 
 </section>
 
+<div class="container">
+    <img class="view-main-pic center-block" src="<?= APP_ROOT.$this->review['picture'] ?>"/>
+    <div class="text-center">
+        <h1>Content</h1>
+    </div>
+    <div class="text-container">
+        <?=htmlspecialchars($this->review['content'])?>
+    </div>
+</div>
 
 <div class="container">
     <div class="text-center">
@@ -53,16 +57,14 @@
     <iframe class="video center-block" width="560" height="315" src="<?=$this->review['video']?>">
     </iframe>
 <hr>
-<section>
+
             <h1 id="comments" class="text-center">Comments</h1>
-</section>
 
 <?php
 
 if ($this->user != NULL) { ?>
-    <section class="comment-form">
-        <div class="submit-comment-div">
-            <form class="submit-comment" method="post" action="?#comments">
+        <div class="container">
+            <form class="post-review center-block" method="post" action="?#comments">
                 <div class="form-group">
                     <label for="comment">Submit a comment: </label><br>
                     <textarea class="form-control-comment" id="comment" name="comment" rows="3" cols="40"></textarea>
@@ -70,7 +72,6 @@ if ($this->user != NULL) { ?>
                 <button type="submit" class="btn btn-primary" name="submit-comment">Submit</button>
             </form>
         </div>
-    </section>
 <?php } else { ?>
     <section id="login-message">
         <div class="alert alert-warning text-center">

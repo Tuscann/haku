@@ -16,6 +16,9 @@
                 <li><a href="<?= APP_ROOT ?>/reviews/PS4">PS4</a></li>
                 <li><a href="<?= APP_ROOT ?>/reviews/Xbox">Xbox One</a></li>
                 <li><a href="<?= APP_ROOT ?>/reviews">Reviews</a></li>
+                <?php if($this->user != NULL) : ?>
+                <li><a href="<?= APP_ROOT ?>/reviews/post">Post review</a></li>
+                <?php endif ?>
                 <li><a href="<?= APP_ROOT ?>/news/">News</a></li>
             </ul>
             <?php
