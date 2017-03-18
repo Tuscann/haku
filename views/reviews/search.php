@@ -13,17 +13,14 @@
                                     <div class="form-group">
                                         <label for="category-filter">Filter by category</label>
                                         <select name="category-filter" id="category-filter" class="form-control">
-                                            <option value="All" selected>All</option>
-                                            <option value="PC"
-                                                <?php if (isset($_POST['category-filter']) == "PC"){ echo "selected"; }?>>
+                                            <option value="All">All</option>
+                                            <option value="PC" <?=isset($_POST['category-filter']) ? ($_POST['category-filter'] == "PC") : "" ? "selected" : ""?>>
                                                 PC
                                             </option>
-                                            <option value="PS4"
-                                                <?php if (isset($_POST['category-filter']) == "PS4"){ echo "selected"; }?>>
+                                            <option value="PS4" <?=isset($_POST['category-filter']) ? ($_POST['category-filter'] == "PS4") : "" ? "selected" : ""?>>
                                                 PS4
                                             </option>
-                                            <option value="Xbox"
-                                                <?php if (isset($_POST['category-filter']) == "Xbox"){ echo "selected"; }?>>
+                                            <option value="Xbox" <?=isset($_POST['category-filter']) ? ($_POST['category-filter'] == "Xbox") : "" ? "selected" : ""?>>
                                                 Xbox
                                             </option>
                                         </select>
@@ -31,12 +28,20 @@
                                     <div class="form-group">
                                         <label for="game-filter">Filter by game</label>
                                         <select name="game-filter" id="game-filter" class="form-control">
-                                            <option value="All" selected>All</option>
+                                            <option value="All">All</option>
                                             <?php foreach ($this->games as $game) : ?>
-                                                <option value="<?=$game['name']?>"
-                                                    <?php if (isset($_POST['game-filter']) == $game['name']){ echo "selected"; }?>>
+                                                <option value="<?=$game['name']?>" <?=($_POST['category-filter'] == $game['name']) ? "selected" : ""?>>
                                                     <?=$game['name']?></option>
                                             <?php endforeach;?>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="order-filter">Order by</label>
+                                        <select name="order-filter" id="order-filter" class="form-control">
+                                            <option value="dateDESC" <?=isset($_POST['order-filter']) ? ($_POST['order-filter'] == "dateDESC") : "" ? "selected" : ""?>>Newest</option>
+                                            <option value="dateASC" <?=($_POST['order-filter'] == "dateASC") ? "selected" : ""?>>Oldest</option>
+                                            <option value="title" <?=($_POST['order-filter'] == "title") ? "selected" : ""?>>Title</option>
                                         </select>
                                     </div>
 
@@ -63,7 +68,7 @@
 <div class="container">
     <div class="container">
         <!-- Example row of columns -->
-        <h1 class="text-center">Results</h1>
+        <h1 class="text-center"><?=count($this->reviews) . " "?>Results</h1>
         <hr>
 <div class="reviews-row">
     <?php if ($this->reviews) : ?>

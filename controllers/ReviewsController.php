@@ -107,13 +107,14 @@ class ReviewsController extends BaseController
             $author = $_POST['author'];
             $category = $_POST['category-filter'];
             $game = $_POST['game-filter'];
+            $sort = $_POST['order-filter'];
 
             if (isset($_POST['title-search'])) {
                 echo "asdasda";
                 $title = $_POST['title'];
                 $reviews = $this->model->searchByTitle($title);
             } else {
-                $reviews = $this->model->getSearchResults($author, $category, '', $game);
+                $reviews = $this->model->getSearchResults($author, $category, '', $game, $sort);
             }
 
             $this->reviews = $reviews;
@@ -198,7 +199,7 @@ class ReviewsController extends BaseController
             $embedLink = str_replace("watch?v=", "embed/", $video);
 
                 if ($this->formValid()) {
-                    $isPosted = $this->model->submitReview($this->user->getId(), 2, $category, $title, $content, $gameplay, $review_pic_new_path, $embedLink);
+                    $isPosted = $this->model->submitReview($this->user->getId(), $_POST['game-select'], $category, $title, $content, $gameplay, $review_pic_new_path, $embedLink);
 
                     if ($isPosted) {
                         header('Location: ' . APP_ROOT);

@@ -1,5 +1,7 @@
 html{
     padding: 1.5%;
+    text-wrap: none;
+    word-break: break-all;
 }
 
 /* Slideshow */
@@ -84,32 +86,6 @@ html{
 .jssora22r.jssora22rdn {
     background-position: -310px -31px;
 }
-/*Section*/
-#one {
-    max-height: 500%;
-    min-width: 200px;
-    text-align: left;
-    border: 2px solid;
-    border-color: #EEEEEE;
-}
-
-#two {
-    margin-top: 20px;
-    min-height: 1050px;
-    min-width: 200px;
-    border: 2px solid;
-    border-color: #EEEEEE;
-}
-
-#three {
-    margin-top: 20px;
-    min-height: 400px;
-    min-width: 200px;
-    border: 2px solid;
-    border-color: #EEEEEE;
-    /*background: url('<?=APP_ROOT?>/content/images/a22.png') center center no-repeat;*/
-}
-
 
 /*=====================================
   TAG LINE STYLES

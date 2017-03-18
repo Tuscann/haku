@@ -10,6 +10,7 @@ class UsersModel extends BaseModel
 
         return $user;
     }
+
     public function register(string $username, string $password_hash, string $email)
     {
         $statement = self::$db->prepare("INSERT INTO users (username, password, email, profile_pic) "
@@ -18,6 +19,7 @@ class UsersModel extends BaseModel
         $user_id = self::$db->query("SELECT LAST_INSERT_ID()")->fetch();
         return $user_id;
     }
+
 
     public function editUser (string $userId, string $password_hash, string $email,
                               string $first_name, string $last_name, string $profile_pic)
@@ -58,5 +60,6 @@ class UsersModel extends BaseModel
 
         return $statement->rowCount();
     }
+
 }
 

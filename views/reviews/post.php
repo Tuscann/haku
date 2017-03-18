@@ -12,7 +12,7 @@
             <label for="game-select">Select game</label>
             <select class="form-control" id="game-select" name="game-select">
                 <?php foreach ($this->games as $game) : ?>
-                    <option value="<?=$game['name']?>"><?=$game['name']?></option>
+                    <option value="<?=$game['id']?>"><?=$game['name']?></option>
                 <?php endforeach;?>
             </select>
         </div>

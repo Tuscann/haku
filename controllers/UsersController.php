@@ -12,7 +12,8 @@ class UsersController extends BaseController
         if (!$this->model->userExists($username)) {
             header("Location: " . APP_ROOT . "/users/view/" . $this->user->getUsername());
         }
-
+        $userProfile = $this->model->getUserByUsername($username);
+        $this->userProfile = $userProfile;
     }
 
     function register()

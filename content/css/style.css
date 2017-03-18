@@ -64,8 +64,6 @@ html * {
 }
 
 .review-info {
-    margin-left: 23px;
-    margin-bottom: 25px;
     font-family: 'Raleway-ExtraBold', sans-serif;
     color: #848484;
 }
@@ -76,7 +74,7 @@ html * {
 }
 
 .review-content a:hover {
-    color: #4086E0;
+    color: #65C7C6;
 }
 
 .review-pic {
@@ -104,7 +102,6 @@ html * {
 }
 
 .review-content {
-    size: 100px;
     border: 1px solid #DCDCDC;
     border-bottom-right-radius: 2%;
     border-bottom-left-radius: 2%;
@@ -290,6 +287,9 @@ html * {
 }
 
 .review-content {
-    white-space: nowrap;
-    word-wrap: break-word;
+    padding: 15px;
+}
+
+.profile {
+    height: 490px;
 }

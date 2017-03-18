@@ -1,33 +1,23 @@
 <section>
-    <div class="tag-line">
-        <div class="container">
-            <div class="row  text-center">
-
-                <div class="col-lg-12  col-md-12 col-sm-12">
-                    <h2><i class="fa fa-circle-o-notch"></i>
-                        <?=htmlspecialchars($this->review['title'])?> Review <i class="fa fa-circle-o-notch"></i></h2>
-                </div>
-            </div>
-        </div>
-
-    </div>
 
     <div class="container">
 
         <div class="row">
-            <div class="col-lg-12 text-center">
 
+            <div class="col-lg-12 text-center">
+                <div class="center-block">
+                    <?php
+                    if ($this->review['username'] == $this->user->getUsername()) : ?>
+                        <a href="<?=APP_ROOT."/reviews/edit/".$this->review['id']?>" class="edit-profile btn">Edit review</a>
+                    <?php endif; ?>
+                </div>
                 <h2 class="text-primary"><?= htmlspecialchars($this->review['title']) ?></h2>
 
                 <p><strong>Posted on:</strong> <?= (new DateTime($this->review['date']))->format('d-M-Y') ?></p>
                 <p><strong>Author:  </strong><a target="_blank" href="<?=APP_ROOT."/users/view/".$this->review['username']?>"><?=$this->review['username']?></a> </p>
                 <hr class="primary">
-            </div>
 
-            <?php
-            if ($this->review['username'] == $this->user->getUsername()) : ?>
-                <a href="<?=APP_ROOT."/reviews/edit/".$this->review['id']?>" class="edit-profile btn">Edit review</a>
-            <?php endif; ?>
+            </div>
 
         </div>
     </div>
@@ -37,7 +27,7 @@
         <div class="text-center">
             <h1>Content</h1>
         </div>
-        <div class="text-left">
+        <div class="text-container">
             <?=htmlspecialchars($this->review['content'])?>
         </div>
     </div>
@@ -49,7 +39,7 @@
     <div class="text-center">
         <h1>Gameplay </h1>
     </div>
-    <div class="text-left">
+    <div class="text-container">
         <?=htmlspecialchars($this->review['gameplay'])?>
     </div>
 </div>

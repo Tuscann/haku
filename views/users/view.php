@@ -1,8 +1,10 @@
-<div class="container">
-
-    <img class="profile-pic center-block" src="<?=APP_ROOT."/".$this->user->getPicture()?>" alt="">
-    <h2 class="profile-name text-center"><?=$this->user->getUsername()?></h2>
-    <div>
-        <a href="<?=APP_ROOT."/users/edit/".$this->user->getId()?>" class="edit-profile btn center-block">Edit profile</a>
+<div class="container profile" style="height: 490px">
+        <img class="profile-pic center-block" src="<?=APP_ROOT."/".$this->userProfile->getPicture()?>" alt="">
+        <h2 class="profile-name text-center"><?=$this->userProfile->getUsername()?></h2>
+    <div class="span7 text-center">
+        <?php if ($this->user->getId() == $this->userProfile->getId()): ?>
+            <a href="<?=APP_ROOT."/users/edit/".$this->userProfile->getId()?>" class="edit-profile btn">Edit profile</a>
+        <?php endif; ?>
     </div>
 </div>
+<?php

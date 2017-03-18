@@ -41,6 +41,8 @@ class ReviewsModel extends BaseModel {
         );
     }
 
+
+
     function getReviewsByCategory($category) {
 
         $query = "SELECT * FROM reviews WHERE category='$category'";
@@ -82,11 +84,23 @@ ON reviews.user_id=users.id WHERE reviews.id = ? LIMIT 1");
         return $statement->fetchAll();
     }
 
-    public function getSearchResults($author, $category, $title, $game) {
+    public function getSearchResults($author, $category, $title, $game, $sort) {
 
         $categorySearch = " AND reviews.category='$category'";
         $authorSearch = " WHERE users.username=?";
         $gamesSearch = " AND games.name='$game'";
+        $sortBy = '';
+
+            switch ($sort) {
+                case "dateASC":
+                    $sortBy = "date ASC";
+                    break;
+                case "dateDESC":
+                    $sortBy = "date DESC";
+                    break;
+                default:
+                    $sortBy = "title ASC";
+            }
 
         if ($category == "All") {
             $categorySearch = '';
@@ -114,7 +128,7 @@ ON reviews.user_id=users.id
 JOIN games
 ON reviews.game_id=games.id
 AND reviews.title
-LIKE '%$title%'" . $authorSearch . $categorySearch . $gamesSearch;
+LIKE '%$title%'" . $authorSearch . $categorySearch . $gamesSearch . "ORDER BY " . $sortBy;
 
         $statement = self::$db->prepare($query);
         $statement->execute(
