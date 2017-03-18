@@ -1,3 +1,7 @@
+
+
+<h1><a href="https://haku.videlin.be/">Live Preview</a></h1>
+
 Blog A simple PHP based web application.
 
 Teamwork project @PHP Basics course - softuni.bg 2017
