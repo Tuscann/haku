@@ -1,8 +1,15 @@
-<form method="POST" class="form-horizontal" enctype="multipart/form-data">
+<form method="POST" class="form-horizontal">
     <fieldset>
 
         <!-- Form Name -->
         <legend class="text-center">Edit review</legend>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="title">Picture</label>
+            <div class="col-md-4">
+                <img style="width: 100%" src="<?=APP_ROOT.$this->review['picture']?>" alt="">
+            </div>
+        </div>
 
         <!-- Text input-->
         <div class="form-group">
@@ -44,15 +51,6 @@
             </div>
         </div>
 
-        <!-- File Button -->
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="review-pic">Review picture</label>
-            <div class="col-md-4">
-                <input id="review-pic" name="review-pic" class="input-file" type="file">
-                <span class="help-block">Upload a new review picture</span>
-            </div>
-        </div>
-
         <!-- Button (Double) -->
         <div class="form-group">
             <label class="col-md-4 control-label" for="button1id"></label>
@@ -62,5 +60,20 @@
             </div>
         </div>
 
+    </fieldset>
+</form>
+
+<form method="POST" class="form-horizontal" enctype="multipart/form-data">
+    <fieldset>
+        <!-- File Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="review-pic">Review picture</label>
+            <div class="col-md-4">
+                <span class="text-danger"><?php if (isset($this->validationErrors['review-pic'])) echo $this->validationErrors['review-pic']; ?></span>
+                <input id="review-pic" name="review-pic" class="input-file" type="file">
+                <span class="help-block">Upload a new review picture</span>
+                <input type="submit" name="submit-pic" class="btn btn-primary" value="Upload">
+            </div>
+        </div>
     </fieldset>
 </form>

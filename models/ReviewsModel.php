@@ -14,7 +14,17 @@ class ReviewsModel extends BaseModel {
                 $id
             ]
         );
+    }
 
+    function changePicture($id, $picture) {
+        $query = "UPDATE reviews SET picture=? WHERE id=?";
+        $statement = self::$db->prepare($query);
+        $statement->execute(
+            [
+                $picture,
+                $id
+            ]
+        );
     }
 
     function editReview($id, $title, $video, $content, $gameplay) {

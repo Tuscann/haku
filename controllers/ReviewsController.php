@@ -41,11 +41,9 @@ class ReviewsController extends BaseController
     function edit($id) {
         $this->deleteReview($id);
 
-
         if ($this->isPost) {
             if (isset($_POST['edit-review'])) {
                 $this->authorize();
-
                 $title = $_POST['title'];
                 $video = $_POST['video'];
                 $content = $_POST['content'];
@@ -53,20 +51,7 @@ class ReviewsController extends BaseController
                 $gameplay = $_POST['gameplay'];
 
 
-                //generate a name for the review picture
-                while (true) {
-                    $pictureName = uniqid();
-                    if (!file_exists(APP_ROOT."/content/images/review/".$pictureName)) {
-                        break;
-                    }
-                };
-
-                //$review_pic_path = "content\\images\\review\\" . $pictureName . ".png";
-                //$review_pic_new_path = "/content/images/review/" . $pictureName . ".png";
-
                 $this->uploadValidation($title, $content, $gameplay, $video);
-                //$this->uploadPicture($_FILES['review-pic'], $review_pic_path);
-
                 $embedLink = str_replace("watch?v=", "embed/", $video);
 
                 if ($this->formValid()) {
@@ -78,9 +63,30 @@ class ReviewsController extends BaseController
                     } else {
                         $this->addErrorMessage("Something went wrong");
                     }
-                } else {
                 }
 
+            }
+
+            //change picture
+            if (isset($_POST['submit-pic'])) {
+                $file = $_FILES['review-pic'];
+                $path = "/content/images/review/" . $file['name'];
+                $pictureName = '';
+
+                //generate a name for the review picture
+                while (true) {
+                    $pictureName = uniqid();
+                    if (!file_exists(APP_ROOT."/content/images/review/".$pictureName)) {
+                        break;
+                    }
+                };
+                $path = "content\\images\\review\\" . $pictureName . ".png";
+                $dbpath = "/content/images/review/" . $pictureName . ".png";
+
+                $this->uploadPicture($file, $path);
+                if ($this->formValid()) {
+                    $this->model->changePicture($id, $dbpath);
+                }
             }
         }
 

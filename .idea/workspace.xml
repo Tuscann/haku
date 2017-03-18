@@ -2,24 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3634050-f13b-4100-83b9-6e62b3af6563" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/users/edit.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/users/view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/images/profile-pics/nakov.png" afterPath="$PROJECT_DIR$/content/images/profile-pics/nakov.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/images/review/.png" afterPath="$PROJECT_DIR$/content/images/review/.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/css/style.css" afterPath="$PROJECT_DIR$/content/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/js/functions.js" afterPath="$PROJECT_DIR$/content/js/functions.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/ReviewsController.php" afterPath="$PROJECT_DIR$/controllers/ReviewsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/UsersController.php" afterPath="$PROJECT_DIR$/controllers/UsersController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/HomeModel.php" afterPath="$PROJECT_DIR$/models/HomeModel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/ReviewsModel.php" afterPath="$PROJECT_DIR$/models/ReviewsModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/UsersModel.php" afterPath="$PROJECT_DIR$/models/UsersModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/_layout/navbar.php" afterPath="$PROJECT_DIR$/views/_layout/navbar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/home/index.php" afterPath="$PROJECT_DIR$/views/home/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/home/view.php" afterPath="$PROJECT_DIR$/views/home/view.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/reviews/edit.php" afterPath="$PROJECT_DIR$/views/reviews/edit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/reviews/post.php" afterPath="$PROJECT_DIR$/views/reviews/post.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/users/login.php" afterPath="$PROJECT_DIR$/views/users/login.php" />
     </list>
     <ignored path="haku.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -61,26 +46,28 @@
       <file leaf-file-name="ReviewsModel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/ReviewsModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="64" selection-start-line="19" selection-start-column="64" selection-end-line="19" selection-end-column="64" />
+            <state relative-caret-position="289">
+              <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
               <folding>
-                <marker date="1489793615712" expanded="true" signature="144:174" ph="DELETE FROM " />
-                <marker date="1489793615712" expanded="true" signature="408:454" ph="UPDATE revie... " />
-                <marker date="1489793615712" expanded="true" signature="408:466" ph="UPDATE revie... " />
-                <marker date="1489793615712" expanded="true" signature="408:477" ph="UPDATE revie... " />
-                <marker date="1489793615712" expanded="true" signature="408:527" ph="UPDATE revie... " />
-                <marker date="1489793615712" expanded="true" signature="791:839" ph="SELECT * FRO... reviews" />
-                <marker date="1489793615712" expanded="true" signature="1137:1372" ph="SELECT revie... reviews" />
-                <marker date="1489793615712" expanded="true" signature="1570:1608" ph="SELECT * FRO... reviews" />
-                <marker date="1489793615712" expanded="true" signature="1570:1630" ph="SELECT * FRO... reviews" />
-                <marker date="1489793615712" expanded="true" signature="1570:1636" ph="SELECT * FRO... reviews" />
-                <marker date="1489793615712" expanded="true" signature="2335:2626" ph="SELECT revie... reviews" />
-                <marker date="1489793615712" expanded="true" signature="2335:2627" ph="SELECT revie... reviews" />
-                <marker date="1489793615712" expanded="true" signature="2941:2978" ph="SELECT * FRO... games" />
-                <marker date="1489793615712" expanded="true" signature="3144:3209" ph="SELECT * FRO... reviews" />
-                <marker date="1489793615712" expanded="true" signature="3520:3531" ph="INSERT INTO ${$revu}... " />
-                <marker date="1489793615712" expanded="true" signature="3520:3630" ph="INSERT INTO reviews... " />
-                <marker date="1489793615712" expanded="true" signature="3520:3725" ph="INSERT INTO reviews... " />
+                <marker date="1489795299331" expanded="true" signature="144:174" ph="DELETE FROM " />
+                <marker date="1489795299331" expanded="true" signature="383:411" ph="UPDATE revie... " />
+                <marker date="1489795299331" expanded="true" signature="383:422" ph="UPDATE revie... " />
+                <marker date="1489795299331" expanded="true" signature="681:727" ph="UPDATE revie... " />
+                <marker date="1489795299331" expanded="true" signature="681:739" ph="UPDATE revie... " />
+                <marker date="1489795299331" expanded="true" signature="681:750" ph="UPDATE revie... " />
+                <marker date="1489795299331" expanded="true" signature="681:800" ph="UPDATE revie... " />
+                <marker date="1489795299331" expanded="true" signature="1064:1112" ph="SELECT * FRO... reviews" />
+                <marker date="1489795299331" expanded="true" signature="1410:1645" ph="SELECT revie... reviews" />
+                <marker date="1489795299331" expanded="true" signature="1843:1881" ph="SELECT * FRO... reviews" />
+                <marker date="1489795299331" expanded="true" signature="1843:1903" ph="SELECT * FRO... reviews" />
+                <marker date="1489795299331" expanded="true" signature="1843:1909" ph="SELECT * FRO... reviews" />
+                <marker date="1489795299331" expanded="true" signature="2608:2899" ph="SELECT revie... reviews" />
+                <marker date="1489795299331" expanded="true" signature="2608:2900" ph="SELECT revie... reviews" />
+                <marker date="1489795299331" expanded="true" signature="3214:3251" ph="SELECT * FRO... games" />
+                <marker date="1489795299331" expanded="true" signature="3417:3482" ph="SELECT * FRO... reviews" />
+                <marker date="1489795299331" expanded="true" signature="3793:3804" ph="INSERT INTO ${$revu}... " />
+                <marker date="1489795299331" expanded="true" signature="3793:3903" ph="INSERT INTO reviews... " />
+                <marker date="1489795299331" expanded="true" signature="3793:3998" ph="INSERT INTO reviews... " />
               </folding>
             </state>
           </provider>
@@ -89,8 +76,8 @@
       <file leaf-file-name="ReviewsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/ReviewsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+            <state relative-caret-position="1005">
+              <caret line="86" column="41" selection-start-line="86" selection-start-column="41" selection-end-line="86" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -99,9 +86,11 @@
       <file leaf-file-name="edit.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/reviews/edit.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="40" column="134" selection-start-line="40" selection-start-column="134" selection-end-line="40" selection-end-column="134" />
-              <folding />
+            <state relative-caret-position="119">
+              <caret line="7" column="69" selection-start-line="7" selection-start-column="69" selection-end-line="7" selection-end-column="69" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#fieldset#0;n#form#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -489,7 +478,7 @@
       <workItem from="1489582822339" duration="8549000" />
       <workItem from="1489598290400" duration="22498000" />
       <workItem from="1489680749795" duration="4191000" />
-      <workItem from="1489750762700" duration="37064000" />
+      <workItem from="1489750762700" duration="39201000" />
     </task>
     <task id="LOCAL-00001" summary="fixed images loading">
       <created>1488961895683</created>
@@ -544,7 +533,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176834000" />
+    <option name="totallyTimeSpent" value="178971000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -947,45 +936,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/ReviewsModel.php">
+    <entry file="file://$PROJECT_DIR$/controllers/ReviewsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="64" selection-start-line="19" selection-start-column="64" selection-end-line="19" selection-end-column="64" />
-          <folding>
-            <marker date="1489793615712" expanded="true" signature="144:174" ph="DELETE FROM " />
-            <marker date="1489793615712" expanded="true" signature="408:454" ph="UPDATE revie... " />
-            <marker date="1489793615712" expanded="true" signature="408:466" ph="UPDATE revie... " />
-            <marker date="1489793615712" expanded="true" signature="408:477" ph="UPDATE revie... " />
-            <marker date="1489793615712" expanded="true" signature="408:527" ph="UPDATE revie... " />
-            <marker date="1489793615712" expanded="true" signature="791:839" ph="SELECT * FRO... reviews" />
-            <marker date="1489793615712" expanded="true" signature="1137:1372" ph="SELECT revie... reviews" />
-            <marker date="1489793615712" expanded="true" signature="1570:1608" ph="SELECT * FRO... reviews" />
-            <marker date="1489793615712" expanded="true" signature="1570:1630" ph="SELECT * FRO... reviews" />
-            <marker date="1489793615712" expanded="true" signature="1570:1636" ph="SELECT * FRO... reviews" />
-            <marker date="1489793615712" expanded="true" signature="2335:2626" ph="SELECT revie... reviews" />
-            <marker date="1489793615712" expanded="true" signature="2335:2627" ph="SELECT revie... reviews" />
-            <marker date="1489793615712" expanded="true" signature="2941:2978" ph="SELECT * FRO... games" />
-            <marker date="1489793615712" expanded="true" signature="3144:3209" ph="SELECT * FRO... reviews" />
-            <marker date="1489793615712" expanded="true" signature="3520:3531" ph="INSERT INTO ${$revu}... " />
-            <marker date="1489793615712" expanded="true" signature="3520:3630" ph="INSERT INTO reviews... " />
-            <marker date="1489793615712" expanded="true" signature="3520:3725" ph="INSERT INTO reviews... " />
-          </folding>
+        <state relative-caret-position="1005">
+          <caret line="86" column="41" selection-start-line="86" selection-start-column="41" selection-end-line="86" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/ReviewsController.php">
+    <entry file="file://$PROJECT_DIR$/models/ReviewsModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="289">
+          <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+          <folding>
+            <marker date="1489795299331" expanded="true" signature="144:174" ph="DELETE FROM " />
+            <marker date="1489795299331" expanded="true" signature="383:411" ph="UPDATE revie... " />
+            <marker date="1489795299331" expanded="true" signature="383:422" ph="UPDATE revie... " />
+            <marker date="1489795299331" expanded="true" signature="681:727" ph="UPDATE revie... " />
+            <marker date="1489795299331" expanded="true" signature="681:739" ph="UPDATE revie... " />
+            <marker date="1489795299331" expanded="true" signature="681:750" ph="UPDATE revie... " />
+            <marker date="1489795299331" expanded="true" signature="681:800" ph="UPDATE revie... " />
+            <marker date="1489795299331" expanded="true" signature="1064:1112" ph="SELECT * FRO... reviews" />
+            <marker date="1489795299331" expanded="true" signature="1410:1645" ph="SELECT revie... reviews" />
+            <marker date="1489795299331" expanded="true" signature="1843:1881" ph="SELECT * FRO... reviews" />
+            <marker date="1489795299331" expanded="true" signature="1843:1903" ph="SELECT * FRO... reviews" />
+            <marker date="1489795299331" expanded="true" signature="1843:1909" ph="SELECT * FRO... reviews" />
+            <marker date="1489795299331" expanded="true" signature="2608:2899" ph="SELECT revie... reviews" />
+            <marker date="1489795299331" expanded="true" signature="2608:2900" ph="SELECT revie... reviews" />
+            <marker date="1489795299331" expanded="true" signature="3214:3251" ph="SELECT * FRO... games" />
+            <marker date="1489795299331" expanded="true" signature="3417:3482" ph="SELECT * FRO... reviews" />
+            <marker date="1489795299331" expanded="true" signature="3793:3804" ph="INSERT INTO ${$revu}... " />
+            <marker date="1489795299331" expanded="true" signature="3793:3903" ph="INSERT INTO reviews... " />
+            <marker date="1489795299331" expanded="true" signature="3793:3998" ph="INSERT INTO reviews... " />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/reviews/edit.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="40" column="134" selection-start-line="40" selection-start-column="134" selection-end-line="40" selection-end-column="134" />
-          <folding />
+        <state relative-caret-position="119">
+          <caret line="7" column="69" selection-start-line="7" selection-start-column="69" selection-end-line="7" selection-end-column="69" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#fieldset#0;n#form#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
